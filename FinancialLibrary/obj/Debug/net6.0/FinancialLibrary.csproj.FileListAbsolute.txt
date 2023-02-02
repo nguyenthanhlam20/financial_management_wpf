@@ -1,0 +1,14 @@
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.deps.json
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.runtimeconfig.json
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.dll
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.pdb
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.csproj.AssemblyReference.cache
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.AssemblyInfo.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.dll
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\refint\FinancialLibrary.dll
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.pdb
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.genruntimeconfig.cache
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\ref\FinancialLibrary.dll
