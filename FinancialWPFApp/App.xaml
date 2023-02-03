@@ -4,6 +4,18 @@
              xmlns:local="clr-namespace:FinancialWPFApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+         <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <!-- Theme Resource -->
+                <ResourceDictionary Source="/UI/Themes/LightTheme.xaml" />
+                
+                <!-- Icon Resource -->
+                <ResourceDictionary Source="/Assets/Icons/Icons.xaml" />
+                
+                <!-- Style Resource -->
+                <ResourceDictionary Source="/UI/Styles/RadioButtonStyle.xaml" />
+                <ResourceDictionary Source="/UI/Styles/ButtonStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

@@ -8,8 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="ViewModels\" />
-    <Folder Include="Views\" />
+    <Folder Include="Assets\Images\" />
+    <Folder Include="Converters\" />
+    <Folder Include="UI\Commands\" />
+    <Folder Include="UI\ViewModels\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FinancialLibrary\FinancialLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Assets\Icons\Icons.xaml">
+      <CustomToolNamespace>FinancialWPFApp</CustomToolNamespace>
+    </Page>
   </ItemGroup>
 
 </Project>
