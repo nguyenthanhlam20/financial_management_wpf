@@ -1,3 +1,4 @@
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\appsettings.json
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.deps.json
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.runtimeconfig.json
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\FinancialLibrary.dll
@@ -12,4 +13,3 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\ne
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.pdb
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\FinancialLibrary.genruntimeconfig.cache
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\obj\Debug\net6.0\ref\FinancialLibrary.dll
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialLibrary\bin\Debug\net6.0\appsettings.json

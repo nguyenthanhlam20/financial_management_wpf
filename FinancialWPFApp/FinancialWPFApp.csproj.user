@@ -7,10 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="UI\Controls\MenuItem.xaml.cs">
+    <Compile Update="Controls\MenuItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\Views\Dashboard.xaml.cs">
+    <Compile Update="UI\Admin\Views\MainWIndowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Admin\Views\DashboardView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -18,25 +21,25 @@
     <Page Update="Assets\Icons\Icons.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Controls\MenuItem.xaml">
+    <Page Update="Controls\MenuItem.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MainWindow.xaml">
+    <Page Update="Styles\ButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Styles\ButtonStyle.xaml">
+    <Page Update="Styles\RadioButtonStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Styles\RadioButtonStyle.xaml">
+    <Page Update="Themes\DarkTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Themes\DarkTheme.xaml">
+    <Page Update="Themes\LightTheme.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Themes\LightTheme.xaml">
+    <Page Update="UI\Admin\Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Views\Dashboard.xaml">
+    <Page Update="UI\Admin\Views\DashboardView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

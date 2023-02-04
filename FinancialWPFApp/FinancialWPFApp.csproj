@@ -10,8 +10,9 @@
   <ItemGroup>
     <Folder Include="Assets\Images\" />
     <Folder Include="Converters\" />
-    <Folder Include="UI\Commands\" />
-    <Folder Include="UI\ViewModels\" />
+    <Folder Include="UI\User\Commands\" />
+    <Folder Include="UI\User\ViewModels\" />
+    <Folder Include="UI\User\Views\" />
   </ItemGroup>
 
   <ItemGroup>
