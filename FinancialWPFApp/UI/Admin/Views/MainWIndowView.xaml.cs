@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.UI.Admin.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace FinancialWPFApp.UI.Admin.Views
         public MainWindowView()
         {
             InitializeComponent();
+            MainWindowViewModel viewModal = new MainWindowViewModel();
         }
     }
 }
