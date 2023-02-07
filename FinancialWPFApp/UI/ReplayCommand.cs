@@ -12,9 +12,10 @@ namespace FinancialWPFApp.UI
     public class ReplayCommand : ICommand
     {
 
-        [NotNull]
+        [MaybeNull]
         readonly Action<object> _execute;
 
+        [MaybeNull]
         readonly Predicate<object> _canExecute;
 
        

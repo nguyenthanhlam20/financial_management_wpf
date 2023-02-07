@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FinancialWPFApp.UI.Views.Admin
+namespace FinancialWPFApp.UI.Public.Views.Pages
 {
     /// <summary>
-    /// Interaction logic for Page1.xaml
+    /// Interaction logic for RegisterView.xaml
     /// </summary>
-    public partial class Dashboard : Page
+    public partial class RegisterView : Page
     {
-        public Dashboard()
+        public RegisterView()
         {
             InitializeComponent();
         }

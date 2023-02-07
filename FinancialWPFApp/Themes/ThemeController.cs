@@ -53,7 +53,7 @@ namespace FinancialWPFApp.Themes
             {
                 if (!string.IsNullOrEmpty(themeName))
                 {
-                    ChangeTheme(new Uri($"UI/Themes/{themeName}.xaml", UriKind.Relative)); ;
+                    ChangeTheme(new Uri($"Themes/{themeName}.xaml", UriKind.Relative)); ;
                 }
             }
             catch (Exception ex)

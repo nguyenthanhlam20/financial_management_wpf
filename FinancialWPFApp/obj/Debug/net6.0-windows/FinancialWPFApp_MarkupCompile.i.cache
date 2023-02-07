@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml
-81835569860
+1112372605
 
-131244908200
+23-1589488923
 221-2015111974
-Assets\Icons\Icons.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\DashboardView.xaml;UI\Admin\Views\MainWindowView.xaml;
+Assets\Icons\Icons.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\MainWindowView.xaml;
 
-True
+False
 

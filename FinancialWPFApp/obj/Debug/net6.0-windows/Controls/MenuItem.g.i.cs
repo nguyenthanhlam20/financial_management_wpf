@@ -53,7 +53,7 @@ namespace FinancialWPFApp.Controls {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/controls/menuitem.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/controls/menuitem.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Controls\MenuItem.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

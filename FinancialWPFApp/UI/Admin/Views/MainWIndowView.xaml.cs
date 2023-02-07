@@ -1,5 +1,4 @@
-﻿using FinancialWPFApp.UI.Admin.ViewModels;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,14 +15,13 @@ using System.Windows.Shapes;
 namespace FinancialWPFApp.UI.Admin.Views
 {
     /// <summary>
-    /// Interaction logic for AdminMainWindow.xaml
+    /// Interaction logic for MainWindowView.xaml
     /// </summary>
     public partial class MainWindowView : Window
     {
         public MainWindowView()
         {
             InitializeComponent();
-            MainWindowViewModel viewModal = new MainWindowViewModel();
         }
     }
 }

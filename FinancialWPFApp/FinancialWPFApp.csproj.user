@@ -10,10 +10,19 @@
     <Compile Update="Controls\MenuItem.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\Admin\Views\MainWIndowView.xaml.cs">
+    <Compile Update="UI\Admin\Views\MainWindowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\Admin\Views\DashboardView.xaml.cs">
+    <Compile Update="UI\Public\Views\MainWindowView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Public\Views\Pages\LoginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\Public\Views\Pages\RegisterView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\MainWIndowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -39,7 +48,16 @@
     <Page Update="UI\Admin\Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\Admin\Views\DashboardView.xaml">
+    <Page Update="UI\Public\Views\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Public\Views\Pages\LoginView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Public\Views\Pages\RegisterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\MainWindowView.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
