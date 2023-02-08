@@ -5,6 +5,12 @@
    
     <!-- Sign In -->
     <sys:String x:Key="signInTitle">Welcome back</sys:String>
-    <sys:String x:Key="signInMessage">Welcome back! Please enter your details</sys:String>
+    <sys:String x:Key="signInMessage">Welcome back! Please enter your details.</sys:String>
     
+    
+    <!-- Sign Up -->
+    <sys:String x:Key="signUnTitle">Create new account</sys:String>
+    <sys:String x:Key="signUnMessage">Give us some of your information to get free access to fieldly.</sys:String>
+
+
 </ResourceDictionary>

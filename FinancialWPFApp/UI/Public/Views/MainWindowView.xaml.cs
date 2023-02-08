@@ -22,6 +22,7 @@ namespace FinancialWPFApp.UI.Public.Views
         public MainWindowView()
         {
             InitializeComponent();
+            frameContent.Source = new Uri("/UI/Public/Views/Pages/LoginView.xaml", UriKind.Relative);
         }
     }
 }

@@ -52,4 +52,8 @@
     <SolidColorBrush x:Key="SecondaryBlackColor" Color="#102341"/>
     <SolidColorBrush x:Key="TertiaryBlackColor" Color="#1C3254"/>
 
+    <!-- Button Color-->
+    <SolidColorBrush x:Key="PrimaryButtonColor" Color="#c8ee44"/>
+    <SolidColorBrush x:Key="BorderButtonColor" Color="#f5f5f5"/>
+
 </ResourceDictionary>

@@ -4,11 +4,16 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinancialWPFApp.UI.Public.Views.Pages"
+      xmlns:vm="clr-namespace:FinancialWPFApp.UI.Public.ViewModels.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="750" d:DesignWidth="550"
       Title="LoginView">
-
-    <Border Padding="70 30 0 0" Background="{DynamicResource SecondaryBackgroundColor}">
+    <Page.DataContext>
+        <vm:LoginViewModel />
+    </Page.DataContext>
+   
+    <Border Padding="70 30 70 30" 
+            Background="{DynamicResource TertiaryBackgroundColor}">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
                 <Path Data="{DynamicResource sun}" 
@@ -18,13 +23,96 @@
                       Fill="{DynamicResource PrimaryYellowColor}" />
                 <Label Content="{DynamicResource appName}" 
                        Style="{DynamicResource StyledLabel}"/>
-                
+
                 
             </StackPanel>
             <StackPanel Margin="0 80 0 0" Orientation="Vertical">
                 <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signInTitle}" FontSize="{DynamicResource titleFontSize}" FontWeight="Bold"   />
                 <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signInMessage}" FontSize="{DynamicResource textFontSize}" Opacity="0.8" />
-                
+                <StackPanel Margin="0 30 0 0 " Orientation="Vertical">
+                    <Label Style="{DynamicResource StyledLabel}"
+                           Content="Email" 
+                           FontWeight="SemiBold" 
+                           Margin="0 0 0 5"/>
+                    <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="Enter your email"
+                            
+                             />
+                </StackPanel>
+                <StackPanel Margin="0 10 0 0" Orientation="Vertical">
+                    <Label Style="{DynamicResource StyledLabel}" 
+                           Content="Password" 
+                           FontWeight="SemiBold"
+                           
+                           Margin="0 0 0 5"/>
+                    <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="****"
+                             
+                             />
+                </StackPanel>
+                <Grid Margin="0 10 0 20" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Column="0"
+                              Content="Remeber for 30 Days"
+                              VerticalAlignment="Center"
+                              FontWeight="SemiBold"/>
+                    <Label Grid.Column="1" Content="Forgot password" 
+                           HorizontalAlignment="Right"
+                           Style="{DynamicResource StyledLabel}"
+                           FontWeight="SemiBold"/>
+                    
+                </Grid>
+                <Button Style="{DynamicResource ProButtonStyle}" 
+                        Content="Sign in" 
+                        Background="{DynamicResource PrimaryButtonColor}" 
+                        FontWeight="Bold" 
+                        FontSize="{DynamicResource textFontSize}"/>
+
+
+                <Border Margin="0 10 0 0"  
+                        BorderThickness="1"
+                       CornerRadius="10"
+                        BorderBrush="{DynamicResource BorderButtonColor }">
+                    <Button  Style="{DynamicResource ProButtonStyle}" 
+                       
+                        FontWeight="Bold" 
+                        Padding="0"
+                       
+                        FontSize="{DynamicResource textFontSize}">
+
+                        <StackPanel Orientation="Horizontal">
+                            <Path Data="{DynamicResource moon}" 
+                              Fill="{DynamicResource PrimaryYellowColor}" 
+                              Stretch="UniformToFill"
+                              Width="14"
+                              Height="14"/>
+                            <Label Content="Sign in with Google" 
+                               Style="{DynamicResource StyledLabel}"
+                                   Opacity="0.7"
+                               Margin="5 0 0 0"/>
+                        </StackPanel>
+                    </Button>
+                </Border>
+            </StackPanel>
+
+            <StackPanel HorizontalAlignment="Center" 
+                        Orientation="Horizontal"
+                        Margin="0 20 0 0">
+                <Label Style="{DynamicResource StyledLabel}" 
+                       Content="Don't have an account?"
+                       Opacity="0.7" 
+                       />
+                <Button Margin="5 0 0 5"  
+                        Padding="0"
+                        Height="Auto"
+                       Style="{DynamicResource ProButtonStyle}"
+                       Content="Sign up for free"
+                        Command="{Binding RedirectToSignUpCommand}"
+                        CommandParameter="{RelativeSource Mode=FindAncestor, AncestorType=Frame}"
+                       FontWeight="Bold" />
             </StackPanel>
         </StackPanel>
     </Border>

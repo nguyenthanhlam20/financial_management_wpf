@@ -4,24 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinancialWPFApp.UI.Public.Views"
+        xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
-        xmlns:vm="clr-namespace:FinancialWPFApp.UI.Admin.ViewModels"
-        Title="MainWindowView" Height="450" Width="800" 
+        xmlns:vm="clr-namespace:FinancialWPFApp.UI.Public.ViewModels"
+        Title="MainWindowView" Height="750" Width="1100" 
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         WindowState="Normal">
     <Window.DataContext>
-        <vm:MainWIndowViewModel />
+        <vm:MainWindowViewModel />
     </Window.DataContext>
+
+    <Window.Resources>
+        <Style x:Key="FrameTrigger" TargetType="{x:Type Frame}" >
+            <Style.Triggers>
+                
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
     
     
     <Border Background="{DynamicResource PrimaryBackgroundColor}">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="330" />
+                <ColumnDefinition Width="500" />
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" Background="{DynamicResource SecondaryBackgroundColor}" >
-                <Frame x:Name="frameContent" NavigationUIVisibility="Hidden" />
+                <Frame Source="{Binding LoginSource}" 
+                       x:Name="frameContent" 
+                       NavigationUIVisibility="Hidden" 
+                        />
             </Border>
             <Image Grid.Column="1" Source="/Assets/Images/img_welcome.png" Stretch="Fill" />
 

@@ -80,3 +80,4 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Assets\Values\Sizes.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Assets\Values\Strings.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\LabelStyle.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\TextBoxStyle.baml

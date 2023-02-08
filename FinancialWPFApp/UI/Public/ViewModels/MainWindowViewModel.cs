@@ -8,6 +8,9 @@ namespace FinancialWPFApp.UI.Public.ViewModels
 {
     public class MainWindowViewModel
     {
+
+        public Uri LoginSource = new Uri("/UI/Public/Views/Pages/LoginView.xaml", UriKind.Relative);
+
         public MainWindowViewModel()
         {
         }
