@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinancialWPFApp.UI.Public.Commands.Pages
 {
-    class RegisterCommand
+    public  class RegisterCommand
     {
     }
 }

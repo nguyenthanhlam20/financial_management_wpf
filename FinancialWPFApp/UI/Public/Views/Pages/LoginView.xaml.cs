@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.UI.Public.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,7 @@ namespace FinancialWPFApp.UI.Public.Views.Pages
         public LoginView()
         {
             InitializeComponent();
+            LoginViewModel loginView = new LoginViewModel(); 
         }
     }
 }

@@ -8,7 +8,24 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="LoginView">
 
-    <Grid>
-        
-    </Grid>
+    <Border Padding="70 30 0 0" Background="{DynamicResource SecondaryBackgroundColor}">
+        <StackPanel Orientation="Vertical">
+            <StackPanel Orientation="Horizontal">
+                <Path Data="{DynamicResource sun}" 
+                      Height="{DynamicResource appIconSize}" 
+                      Width="{DynamicResource appIconSize}" 
+                      Stretch="UniformToFill" 
+                      Fill="{DynamicResource PrimaryYellowColor}" />
+                <Label Content="{DynamicResource appName}" 
+                       Style="{DynamicResource StyledLabel}"/>
+                
+                
+            </StackPanel>
+            <StackPanel Margin="0 80 0 0" Orientation="Vertical">
+                <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signInTitle}" FontSize="{DynamicResource titleFontSize}" FontWeight="Bold"   />
+                <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signInMessage}" FontSize="{DynamicResource textFontSize}" Opacity="0.8" />
+                
+            </StackPanel>
+        </StackPanel>
+    </Border>
 </Page>

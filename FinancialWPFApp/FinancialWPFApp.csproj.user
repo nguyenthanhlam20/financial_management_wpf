@@ -16,6 +16,9 @@
     <Compile Update="UI\Public\Views\MainWindowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\Public\Views\Pages\ForgotPasswordView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\Public\Views\Pages\LoginView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -27,13 +30,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Assets\Values\Sizes.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Assets\Icons\Icons.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Assets\Values\Strings.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Controls\MenuItem.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\LabelStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\RadioButtonStyle.xaml">
@@ -49,6 +61,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Public\Views\MainWindowView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\Public\Views\Pages\ForgotPasswordView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Public\Views\Pages\LoginView.xaml">

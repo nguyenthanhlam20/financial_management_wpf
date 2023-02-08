@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml
-1112372605
+15-669110043
 
-23-1589488923
+271422639818
 221-2015111974
-Assets\Icons\Icons.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\MainWindowView.xaml;
+Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\MainWindowView.xaml;
 
 False
 

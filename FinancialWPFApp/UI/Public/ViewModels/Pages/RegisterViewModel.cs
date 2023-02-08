@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinancialWPFApp.UI.Public.ViewModels.Pages
 {
-    class RegisterViewModel
+    public class RegisterViewModel
     {
     }
 }

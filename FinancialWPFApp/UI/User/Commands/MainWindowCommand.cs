@@ -24,7 +24,7 @@ namespace FinancialWPFApp.UI.User.Commands
             _viewModel.CloseWindowCommand = new ReplayCommand(CloseWindow);
         }
 
-        public void MaximizeWindow(object parameter)
+        private void MaximizeWindow(object parameter)
         {
             Window mainWindow = (Window) parameter;
             if(mainWindow.WindowState == WindowState.Normal)
@@ -34,20 +34,20 @@ namespace FinancialWPFApp.UI.User.Commands
             {
                 mainWindow.WindowState = WindowState.Normal;
             }
-        } 
+        }
 
-        public void MinimizeWindow(object parameter)
+        private void MinimizeWindow(object parameter)
         {
             Window mainWindow = (Window)parameter;
             mainWindow.WindowState = WindowState.Minimized;
         }
 
-        public void CloseWindow(object parameter) {
+        private void CloseWindow(object parameter) {
             Window mainWindow = (Window)parameter;
             mainWindow.Close();
         }
-       
-        public void SwitchTheme(object parameter)
+
+        private void SwitchTheme(object parameter)
         {
             ToggleButton tgb = (ToggleButton) parameter; 
         

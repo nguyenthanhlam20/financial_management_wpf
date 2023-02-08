@@ -8,7 +8,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Assets\Images\" />
+    <None Remove="Assets\Images\img_welcome.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Fonts\" />
     <Folder Include="Converters\" />
     <Folder Include="UI\Admin\Commands\Pages\" />
     <Folder Include="UI\Admin\ViewModels\Pages\" />
@@ -20,6 +24,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FinancialLibrary\FinancialLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Images\img_welcome.png" />
   </ItemGroup>
 
   <ItemGroup>

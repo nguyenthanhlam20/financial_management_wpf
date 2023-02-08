@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FinancialWPFApp.UI.Public.ViewModels
 {
-    class MainWindowViewModel
+    public class MainWindowViewModel
     {
+        public MainWindowViewModel()
+        {
+        }
     }
 }
