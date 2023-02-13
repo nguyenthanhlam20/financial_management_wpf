@@ -30,8 +30,8 @@
                 <ColumnDefinition Width="500" />
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" Background="{DynamicResource SecondaryBackgroundColor}" >
-                <Frame Source="{Binding LoginSource}" 
-                       x:Name="frameContent" 
+                <Frame Content="{Binding CurrentPage}" 
+                       x:Name="frameContent"
                        NavigationUIVisibility="Hidden" 
                         />
             </Border>

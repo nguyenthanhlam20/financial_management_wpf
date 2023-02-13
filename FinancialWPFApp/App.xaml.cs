@@ -13,5 +13,6 @@ namespace FinancialWPFApp
     /// </summary>
     public partial class App : Application
     {
+        
     }
 }

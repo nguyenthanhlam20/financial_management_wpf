@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace FinancialWPFApp.UI.Public.Commands.Pages
@@ -34,7 +35,7 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
 
         private void RedirectToSignUp(object parameter)
         {
-            Frame frame = (Frame)parameter;
+            Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
             frame.Navigate(new RegisterView());
         }
 

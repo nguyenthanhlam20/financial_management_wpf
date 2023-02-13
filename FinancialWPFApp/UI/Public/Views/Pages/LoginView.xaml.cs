@@ -21,10 +21,11 @@ namespace FinancialWPFApp.UI.Public.Views.Pages
     /// </summary>
     public partial class LoginView : Page
     {
+
         public LoginView()
         {
             InitializeComponent();
-            LoginViewModel loginView = new LoginViewModel(); 
+            DataContext = new LoginViewModel();
         }
     }
 }

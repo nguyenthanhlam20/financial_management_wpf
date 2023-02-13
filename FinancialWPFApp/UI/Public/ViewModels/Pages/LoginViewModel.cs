@@ -1,14 +1,16 @@
 ﻿using FinancialWPFApp.UI.Public.Commands.Pages;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace FinancialWPFApp.UI.Public.ViewModels.Pages
 {
-    public class LoginViewModel
+    public class LoginViewModel : INotifyPropertyChanged
     {
         [MaybeNull]
         public ReplayCommand SignInCommand { get; set; }
@@ -18,7 +20,6 @@ namespace FinancialWPFApp.UI.Public.ViewModels.Pages
 
         [MaybeNull]
         public ReplayCommand RedirectToSignUpCommand { get; set; }
-
 
         [MaybeNull]
         public ReplayCommand RedirectToForgotPasswordCommand { get; set; }
@@ -32,9 +33,12 @@ namespace FinancialWPFApp.UI.Public.ViewModels.Pages
         [MaybeNull] 
         public bool IsRemember { get; set; }
 
+
         public LoginViewModel()
         {
             LoginCommand commands = new LoginCommand(this);
         }
+
+        public event PropertyChangedEventHandler? PropertyChanged;
     }
 }

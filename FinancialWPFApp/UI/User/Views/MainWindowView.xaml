@@ -39,16 +39,42 @@
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Orientation="Vertical" >
-                        <RadioButton x:Name="rdDashboard" Content="Dashboard" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource dashboard}" Margin="0 30 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdTransactions" Content="Transactions" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource analytics}" Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdInvoices" Content="Invoices" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource maximize}" Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdMyWallets" Content="My Wallets" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource messages}" Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdPrice" Content="Pricing" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource information}"></RadioButton>
+                        <RadioButton x:Name="rdDashboard" 
+                                     Content="Dashboard" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource dashboard}"
+                                     Margin="0 30 0 0" ></RadioButton>
+                        <RadioButton x:Name="rdTransactions"
+                                     Content="Transactions"
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource analytics}" 
+                                     Margin="0 1 0 0" ></RadioButton>
+                        <RadioButton x:Name="rdInvoices" 
+                                     Content="Invoices" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource maximize}" 
+                                     Margin="0 1 0 0" ></RadioButton>
+                        <RadioButton x:Name="rdMyWallets" 
+                                     Content="My Wallets" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}"  
+                                     Tag="{DynamicResource messages}" 
+                                     Margin="0 1 0 0" ></RadioButton>
+                        <RadioButton x:Name="rdPrice" 
+                                     Content="Pricing" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}"  
+                                     Tag="{DynamicResource information}"></RadioButton>
 
                         <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}" />
 
-                        <RadioButton x:Name="rdNotifications" Content="Notifications" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource notifications}" Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdSettings" Content="Settings" Style="{DynamicResource MenuRadioButtonStyle}"  Tag="{DynamicResource settings}" ></RadioButton>
+                        <RadioButton x:Name="rdNotifications" 
+                                     Content="Notifications" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource notifications}"
+                                     Margin="0 1 0 0" ></RadioButton>
+                        <RadioButton x:Name="rdSettings" 
+                                     Content="Settings" 
+                                     Style="{DynamicResource MenuRadioButtonStyle}" 
+                                     Tag="{DynamicResource settings}" ></RadioButton>
 
 
                     </StackPanel>
