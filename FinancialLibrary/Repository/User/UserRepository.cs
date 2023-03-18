@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinancialLibrary.Repository
 {
-    internal class UserRepository
+    public class UserRepository
     {
     }
 }

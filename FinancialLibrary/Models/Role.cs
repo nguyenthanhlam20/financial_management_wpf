@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace FinancialLibrary.DataAccess
+namespace FinancialLibrary.Models
 {
     public partial class Role
     {

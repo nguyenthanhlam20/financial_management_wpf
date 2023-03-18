@@ -4,6 +4,7 @@
                     >
     
     
+    <SolidColorBrush x:Key="TextBoxPlaceholderColor" Color="#898899"/>
 
     <!-- Background Colors -->
     <SolidColorBrush x:Key="PrimaryBackgroundColor" Color="#C0C9EA"/>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinancialLibrary.DataAccess
 {
-    internal class UserManagement
+    public class UserManagement
     {
     }
 }

@@ -12,6 +12,8 @@
         <Setter Property="Height" Value="45" />
         <Setter Property="Padding" Value="10 5" />
         <Setter Property="Template">
+
+
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type TextBoxBase}">
                     <Border Name="Border"
@@ -19,9 +21,48 @@
                 Padding="2"
                 BorderThickness="2"
                 Background="{TemplateBinding Background}"
-                                        BorderBrush="{TemplateBinding BorderBrush}">
-                        <ScrollViewer Margin="0"
-                        x:Name="PART_ContentHost" />
+                BorderBrush="{TemplateBinding BorderBrush}">
+
+                        <Grid >
+                            <TextBox Text="{Binding Path=Text,
+                                                RelativeSource={RelativeSource TemplatedParent}, 
+                                                Mode=TwoWay,
+                                                UpdateSourceTrigger=PropertyChanged}"
+                                     x:Name="textSource" 
+                                     Background="{TemplateBinding Background}" 
+                                     BorderThickness="0"
+                                     BorderBrush="{TemplateBinding Background}"
+                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                                     Padding="{TemplateBinding Padding}"
+                                     Panel.ZIndex="2"
+                                     >
+                               
+                            </TextBox>
+                            <TextBox BorderThickness="0"
+                                     BorderBrush="Transparent" 
+                                     Text="{TemplateBinding Tag}" 
+                                     Background="{TemplateBinding Background}" 
+                                     Panel.ZIndex="1">
+                                <TextBox.Style>
+                                    <Style TargetType="{x:Type TextBox}">
+                                        <Setter Property="Foreground" Value="Transparent"/>
+                                        <Setter Property="Padding" Value="10 5" />
+                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" 
+                                                         Value="">
+                                                <Setter Property="Foreground" 
+                                                        Value="{DynamicResource TextBoxPlaceholderColor}"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBox.Style>
+                            </TextBox>
+                           
+                        </Grid>
+                       
+
+
                     </Border>
                     <ControlTemplate.Triggers>
 

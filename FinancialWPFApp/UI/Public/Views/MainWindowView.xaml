@@ -7,7 +7,7 @@
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:FinancialWPFApp.UI.Public.ViewModels"
-        Title="MainWindowView" Height="750" Width="1100" 
+        Title="MainWindowView" Height="750" Width="1200" 
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         WindowState="Normal">
     <Window.DataContext>
@@ -27,10 +27,13 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="500" />
+                <ColumnDefinition Width="550" />
             </Grid.ColumnDefinitions>
             <Border Grid.Column="0" Background="{DynamicResource SecondaryBackgroundColor}" >
-                <Frame Content="{Binding CurrentPage}" 
+                <Frame
+                    Padding="90 30 90 30" 
+                    Background="{DynamicResource TertiaryBackgroundColor}"
+                    Content="{Binding CurrentPage}" 
                        x:Name="frameContent"
                        NavigationUIVisibility="Hidden" 
                         />

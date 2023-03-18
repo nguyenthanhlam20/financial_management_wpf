@@ -13,12 +13,15 @@
     <sys:String x:Key="signUpForFree">Sign up for free</sys:String>
     <sys:String x:Key="rememberMessage">Remeber for 30 Days</sys:String>
     <sys:String x:Key="enterEmail">Enter your email</sys:String>
+    <sys:String x:Key="enterPassword">Enter your password</sys:String>
+    <sys:String x:Key="confirmPassword">Confirm your password</sys:String>
     
     
     
     <!-- Sign Up -->
     <sys:String x:Key="signUpTitle">Create new account</sys:String>
     <sys:String x:Key="signUpMessage">Give us some of your information to get free access to fieldly.</sys:String>
-
+    <sys:String x:Key="enterFullname">Enter your full name</sys:String>
+    
 
 </ResourceDictionary>
