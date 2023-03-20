@@ -48,14 +48,12 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Themes\DarkTheme.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Themes\LightTheme.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Controls\MenuItem.g.cs
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\MainWindowView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\App.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp_MarkupCompile.cache
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp_MarkupCompile.lref
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\App.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Controls\MenuItem.baml
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\MainWindowView.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.g.resources
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.AssemblyInfoInputs.cache
@@ -81,3 +79,9 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Assets\Values\Strings.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\LabelStyle.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\TextBoxStyle.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Transaction.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Transaction.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Dashboard.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\UserMainWindowView.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Dashboard.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\UserMainWindowView.baml

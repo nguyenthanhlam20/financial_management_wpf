@@ -1,4 +1,5 @@
-﻿using FinancialWPFApp.UI.Public.ViewModels.Pages;
+﻿using FinancialLibrary.Models;
+using FinancialWPFApp.UI.Public.ViewModels.Pages;
 using FinancialWPFApp.UI.Public.Views.Pages;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ using System.Windows.Controls;
 
 namespace FinancialWPFApp.UI.Public.Commands.Pages
 {
-    public  class RegisterCommand
+    public class RegisterCommand
     {
 
         private RegisterViewModel _viewModel;
@@ -24,13 +25,33 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
 
         private void SignUp(object parameter)
         {
+            using (var context = new FinancialManagementContext())
+            {
+                Account account = new Account();
+                account.Email = _viewModel.Email;
+                account.Password = _viewModel.Password;
+                account.IsActive = true;
+                account.FullName = _viewModel.FullName;
 
+
+                context.Accounts.Add(account);
+                if (context.SaveChanges() > 0)
+                {
+
+                    RedirectToSignIn(parameter);
+                }
+                else
+                {
+                    MessageBox.Show("Failed to sign up new account");
+                }
+
+            }
         }
 
 
         private void RedirectToSignIn(object parameter)
         {
-            Frame frame = (Frame) Application.Current.MainWindow.FindName("frameContent");
+            Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
             frame.Navigate(new LoginView());
         }
 

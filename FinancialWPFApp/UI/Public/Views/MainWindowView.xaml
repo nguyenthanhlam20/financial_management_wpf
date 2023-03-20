@@ -10,9 +10,7 @@
         Title="MainWindowView" Height="750" Width="1200" 
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         WindowState="Normal">
-    <Window.DataContext>
-        <vm:MainWindowViewModel />
-    </Window.DataContext>
+
 
     <Window.Resources>
         <Style x:Key="FrameTrigger" TargetType="{x:Type Frame}" >

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml
-161059674210
+18443182720
 
-27-1902403014
+321495013615
 221-2015111974
-Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\MainWindowView.xaml;
+Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\Pages\Dashboard.xaml;UI\User\Views\Pages\Transaction.xaml;UI\User\Views\UserMainWindowView.xaml;
 
 True
 

@@ -17,9 +17,9 @@ namespace FinancialWPFApp.UI.Admin.Views
     /// <summary>
     /// Interaction logic for MainWindowView.xaml
     /// </summary>
-    public partial class MainWindowView : Window
+    public partial class AdminMainWindowView : Window
     {
-        public MainWindowView()
+        public AdminMainWindowView()
         {
             InitializeComponent();
         }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FinancialLibrary.Repository;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +15,23 @@ namespace FinancialWPFApp
     /// </summary>
     public partial class App : Application
     {
-        
+        private ServiceProvider serviceProvider;
+
+        public App()
+        {
+            ServiceCollection services = new ServiceCollection();
+            ConfigureServices(services);
+            serviceProvider = services.BuildServiceProvider();
+        }
+
+        public void ConfigureServices(ServiceCollection services)
+        {
+            services.AddSingleton(typeof(IAccountRepository), typeof(AccountRepository));
+            services.AddSingleton(typeof(ITransactionRepository), typeof(TransactionRepository));
+
+        }
+
+
+
     }
 }

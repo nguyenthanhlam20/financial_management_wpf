@@ -17,9 +17,6 @@
     <Folder Include="UI\Admin\Commands\Pages\" />
     <Folder Include="UI\Admin\ViewModels\Pages\" />
     <Folder Include="UI\Admin\Views\Pages\" />
-    <Folder Include="UI\User\Commands\Pages\" />
-    <Folder Include="UI\User\ViewModels\Pages\" />
-    <Folder Include="UI\User\Views\Pages\" />
   </ItemGroup>
 
   <ItemGroup>

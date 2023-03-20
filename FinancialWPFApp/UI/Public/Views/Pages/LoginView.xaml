@@ -69,6 +69,7 @@
                         Content="{DynamicResource signIn}" 
                         Background="{DynamicResource PrimaryButtonColor}" 
                         FontWeight="Bold" 
+                         Command="{Binding Path=SignInCommand}"
                         FontSize="{DynamicResource textFontSize}"/>
 
 

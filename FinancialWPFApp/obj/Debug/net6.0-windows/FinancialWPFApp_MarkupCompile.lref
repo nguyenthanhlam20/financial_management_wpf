@@ -6,5 +6,7 @@ FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Vi
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Views\Pages\ForgotPasswordView.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Views\Pages\LoginView.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Views\Pages\RegisterView.xaml;;
-FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\MainWindowView.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\Dashboard.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\Transaction.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\UserMainWindowView.xaml;;
 

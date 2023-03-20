@@ -76,6 +76,7 @@
                         Content="Sign up" 
                         Background="{DynamicResource PrimaryButtonColor}" 
                         FontWeight="Bold" 
+                        Command="{Binding Path=SignUpCommand}"
                         FontSize="{DynamicResource textFontSize}"/>
 
 

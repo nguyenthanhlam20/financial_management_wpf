@@ -25,6 +25,10 @@ namespace FinancialWPFApp.UI.Public.ViewModels.Pages
 
         [MaybeNull]
         public string Password { get; set; }
+        [MaybeNull]
+        public string ConfirmPassword { get; set; }
+        [MaybeNull]
+        public string FullName { get; set; }
 
         [MaybeNull]
         public bool IsRemember { get; set; }
