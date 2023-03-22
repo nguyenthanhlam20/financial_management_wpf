@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
+using FinancialWPFApp.UI.User.Views.Pages;
 
 namespace FinancialWPFApp.UI.User.Commands
 {
@@ -19,18 +20,64 @@ namespace FinancialWPFApp.UI.User.Commands
         {
             _viewModel = viewModel;
             _viewModel.MaximizeWindowCommand = new ReplayCommand(MaximizeWindow);
-            _viewModel.MinimizeWindowCommand= new ReplayCommand(MinimizeWindow);
+            _viewModel.MinimizeWindowCommand = new ReplayCommand(MinimizeWindow);
             _viewModel.SwitchThemeCommand = new ReplayCommand(SwitchTheme);
             _viewModel.CloseWindowCommand = new ReplayCommand(CloseWindow);
+            _viewModel.OpenPage = new ReplayCommand(OpenPage);
+        }
+
+
+        public void OpenPage(object parameter)
+        {
+            Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
+
+            string page = parameter.ToString();
+
+
+
+            if (page == "Dashboard")
+            {
+                frame.Navigate(new Dashboard());
+            }
+
+
+            if (page == "Transaction")
+            {
+                
+                MessageBox.Show("(" + page + "), " + frame.Name + ", " + Application.Current.MainWindow.Name);
+                frame.Navigate(new Transaction());
+            }
+
+            if (page == "MyWallet")
+            {
+                frame.Navigate(new MyWallet());
+            }
+
+            if (page == "Notification")
+            {
+                //frame.Navigate(new Notification());
+            }
+
+            if (page == "Report")
+            {
+                frame.Navigate(new Report());
+            }
+
+            if (page == "InfoSetting")
+            {
+                frame.Navigate(new InfoSetting());
+            }
+
         }
 
         private void MaximizeWindow(object parameter)
         {
-            Window mainWindow = (Window) parameter;
-            if(mainWindow.WindowState == WindowState.Normal)
+            Window mainWindow = (Window)parameter;
+            if (mainWindow.WindowState == WindowState.Normal)
             {
                 mainWindow.WindowState = WindowState.Maximized;
-            } else
+            }
+            else
             {
                 mainWindow.WindowState = WindowState.Normal;
             }
@@ -42,19 +89,22 @@ namespace FinancialWPFApp.UI.User.Commands
             mainWindow.WindowState = WindowState.Minimized;
         }
 
-        private void CloseWindow(object parameter) {
-            Window mainWindow = (Window)parameter;
-            mainWindow.Close();
+        private void CloseWindow(object parameter)
+        {
+
+            Application.Current.Shutdown();
+
         }
 
         private void SwitchTheme(object parameter)
         {
-            ToggleButton tgb = (ToggleButton) parameter; 
-        
-            if(tgb.IsChecked == true)
+            ToggleButton tgb = (ToggleButton)parameter;
+
+            if (tgb.IsChecked == true)
             {
                 ThemeController.SetTheme(ThemeController.ThemeTypes.Dark);
-            } else
+            }
+            else
             {
                 ThemeController.SetTheme(ThemeController.ThemeTypes.Light);
             }

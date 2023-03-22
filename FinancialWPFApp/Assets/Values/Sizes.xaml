@@ -8,6 +8,7 @@
 
     <sys:Double x:Key="appIconSize">20</sys:Double>
 
+    <sys:Double x:Key="appFontSize">20</sys:Double>
 
     <sys:Double x:Key="btnButtonHeight">45</sys:Double>
 

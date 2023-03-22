@@ -1,4 +1,4 @@
-﻿
+﻿C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\Controls\MenuItem.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Admin\Views\MainWindowView.xaml;;
@@ -7,6 +7,9 @@ FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Vi
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Views\Pages\LoginView.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\Public\Views\Pages\RegisterView.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\Dashboard.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\InfoSetting.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\MyWallet.xaml;;
+FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\Report.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\Pages\Transaction.xaml;;
 FC:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\UI\User\Views\UserMainWindowView.xaml;;
 

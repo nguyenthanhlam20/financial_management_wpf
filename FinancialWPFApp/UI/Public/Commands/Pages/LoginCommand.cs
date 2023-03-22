@@ -1,5 +1,6 @@
 ﻿using FinancialLibrary.Models;
 using FinancialWPFApp.Constants;
+using FinancialWPFApp.Helpers;
 using FinancialWPFApp.UI.Admin.Views;
 using FinancialWPFApp.UI.Public.ViewModels.Pages;
 using FinancialWPFApp.UI.Public.Views.Pages;
@@ -18,6 +19,8 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
     public class LoginCommand
     {
         private LoginViewModel _viewModel;
+
+
         public LoginCommand(LoginViewModel viewModel)
         {
             _viewModel = viewModel;
@@ -30,32 +33,61 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
         private void SignIn(object parameter)
         {
             Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
-            using (var context = new FinancialManagementContext())
+
+            if (String.IsNullOrEmpty(_viewModel.Email) || String.IsNullOrEmpty(_viewModel.Password))
             {
-                Account account = context.Accounts.SingleOrDefault(u => u.Email == _viewModel.Email && u.Password == _viewModel.Password);
+                MessageBox.Show("Please enter email and password");
+            }
+            else
+            {
 
-                if (account != null)
+                if (ValidationHelper.IsValidEmail(_viewModel.Email) == false)
                 {
-                    Application.Current.MainWindow.Hide();
-                    if (account.RoleId == (int)AppConstants.Roles.Admin)
-                    {
+                    MessageBox.Show("Please enter email in correct form (example@gmail.com)");
+                }
 
-                        AdminMainWindowView window = new AdminMainWindowView();
-                        window.Show();
-                    }
-                    else
-                    {
-                        UserMainWindowView window = new UserMainWindowView();
-                        window.Show();
-                    }
-
+                else if (ValidationHelper.IsValidPassword(_viewModel.Password) == false)
+                {
+                    MessageBox.Show("Password must have at least 6 characters");
                 }
                 else
                 {
 
+                    using (var context = new FinancialManagementContext())
+                    {
+                        Account account = context.Accounts.SingleOrDefault(u => u.Email == _viewModel.Email && u.Password == _viewModel.Password);
+
+                        if (account != null)
+                        {
+                            Application.Current.MainWindow.Hide();
+                            if (account.RoleId == (int)AppConstants.Roles.Admin)
+                            {
+
+                                AdminMainWindowView window = new AdminMainWindowView();
+                                Application.Current.MainWindow = window;
+
+                            }
+                            else
+                            {
+                                UserMainWindowView window = new UserMainWindowView();
+                                Application.Current.MainWindow = window;
+
+
+                            }
+                            Application.Current.MainWindow.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Incorrect email or password");
+
+                        }
+
+                    }
                 }
 
             }
+
+
         }
 
         private void RedirectToForgotPassword(object parameter)

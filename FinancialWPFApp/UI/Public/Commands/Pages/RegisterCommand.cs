@@ -1,6 +1,10 @@
 ﻿using FinancialLibrary.Models;
+using FinancialWPFApp.Constants;
+using FinancialWPFApp.Helpers;
+using FinancialWPFApp.UI.Admin.Views;
 using FinancialWPFApp.UI.Public.ViewModels.Pages;
 using FinancialWPFApp.UI.Public.Views.Pages;
+using FinancialWPFApp.UI.User.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,27 +29,66 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
 
         private void SignUp(object parameter)
         {
-            using (var context = new FinancialManagementContext())
+
+
+            Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
+
+            if (String.IsNullOrEmpty(_viewModel.Email) || String.IsNullOrEmpty(_viewModel.Password)
+                || String.IsNullOrEmpty(_viewModel.FullName) || String.IsNullOrEmpty(_viewModel.ConfirmPassword))
             {
-                Account account = new Account();
-                account.Email = _viewModel.Email;
-                account.Password = _viewModel.Password;
-                account.IsActive = true;
-                account.FullName = _viewModel.FullName;
+                MessageBox.Show("Please enter all required feilds");
+            }
+            else
+            {
 
-
-                context.Accounts.Add(account);
-                if (context.SaveChanges() > 0)
+                if (ValidationHelper.IsValidEmail(_viewModel.Email) == false)
                 {
+                    MessageBox.Show("Please enter email in correct form (example@gmail.com)");
+                }
 
-                    RedirectToSignIn(parameter);
+                else if (ValidationHelper.IsValidPassword(_viewModel.Password) == false
+                    || ValidationHelper.IsValidPassword(_viewModel.ConfirmPassword) == false)
+                {
+                    MessageBox.Show("Password must have at least 6 characters");
+                }
+                else if (_viewModel.Password != _viewModel.ConfirmPassword)
+                {
+                    MessageBox.Show("Password doesn't match");
+
+                }
+                else if (ValidationHelper.IsExistAccount(_viewModel.Password) == true)
+                {
+                    MessageBox.Show("The account is already exist");
+
                 }
                 else
                 {
-                    MessageBox.Show("Failed to sign up new account");
+                    using (var context = new FinancialManagementContext())
+                    {
+                        Account account = new Account();
+                        account.Email = _viewModel.Email;
+                        account.Password = _viewModel.Password;
+                        account.IsActive = true;
+                        account.FullName = _viewModel.FullName;
+
+
+                        context.Accounts.Add(account);
+                        if (context.SaveChanges() > 0)
+                        {
+
+                            RedirectToSignIn(parameter);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to sign up new account");
+                        }
+
+                    }
                 }
 
             }
+
+
         }
 
 

@@ -55,6 +55,7 @@ namespace FinancialWPFApp.Themes
                 {
                     ChangeTheme(new Uri($"Themes/{themeName}.xaml", UriKind.Relative)); ;
                 }
+                //MessageBox.Show($"Themes/{themeName}.xaml");
             }
             catch (Exception ex)
             {

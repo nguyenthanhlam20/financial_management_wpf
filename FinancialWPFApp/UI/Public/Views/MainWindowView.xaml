@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FinancialWPFApp.UI.Public.Views"
         xmlns:b="http://schemas.microsoft.com/xaml/behaviors"
         mc:Ignorable="d"
+        x:Name="PublicMainWindow"
         xmlns:vm="clr-namespace:FinancialWPFApp.UI.Public.ViewModels"
         Title="MainWindowView" Height="750" Width="1200" 
         WindowStartupLocation="CenterScreen" WindowStyle="None" 

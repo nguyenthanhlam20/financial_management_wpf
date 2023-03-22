@@ -1,4 +1,5 @@
 ﻿using FinancialLibrary.Repository;
+using FinancialWPFApp.Helpers;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;

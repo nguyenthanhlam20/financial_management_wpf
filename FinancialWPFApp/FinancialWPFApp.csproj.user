@@ -25,6 +25,15 @@
     <Compile Update="UI\Public\Views\Pages\RegisterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\User\Views\Pages\InfoSetting.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\Pages\MyWallet.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\Pages\Report.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\User\Views\UserMainWindowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -49,6 +58,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ButtonStyle.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\ControlStyles.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\LabelStyle.xaml">
@@ -79,6 +91,15 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\Public\Views\Pages\RegisterView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Pages\InfoSetting.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Pages\MyWallet.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Pages\Report.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\UserMainWindowView.xaml">

@@ -3,12 +3,104 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
       xmlns:local="clr-namespace:FinancialWPFApp.UI.User.Views.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="Transaction">
 
-    <Grid>
-        
-    </Grid>
+    <StackPanel Background="{DynamicResource TertiaryBackgroundColor}">
+        <TextBox Style="{DynamicResource IconTextBox}" Tag="Search transaction" ></TextBox>
+        <Button Style="{StaticResource IconButtonsStyle}" Content="1" ></Button>
+
+
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+            <Button Style="{StaticResource AddButton}" Width="120" Margin="5">
+                <StackPanel Orientation="Horizontal">
+
+                    <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
+                                   Margin="0 0 10 0" />
+                    <TextBlock Text="Income" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+            <Button Style="{StaticResource AddButton}" Width="120" Margin="5">
+                <StackPanel Orientation="Horizontal">
+
+                    <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
+                                   Margin="0 0 10 0" />
+                    <TextBlock Text="Expense" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+
+        <Separator Height="1" Background="#dae2ea" Margin="0 -1 0 10" />
+
+        <!-- Datagrid -->
+        <DataGrid x:Name="dgTransaction"
+                 Style="{DynamicResource DataGridStyle1}" 
+                  CellStyle="{DynamicResource DataGridCellStyle1}" 
+                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
+                  RowStyle="{DynamicResource DataGridRowStyle1}"  >
+
+
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
+                    <DataGridCheckBoxColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <CheckBox />
+                        </DataTemplate>
+                    </DataGridCheckBoxColumn.HeaderTemplate>
+                </DataGridCheckBoxColumn>
+
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto" />
+
+                <DataGridTemplateColumn Header="Payment To/From" IsReadOnly="True"  Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal"
+                                       
+                                       >
+                                <Border  Width="25" Height="25" CornerRadius="50"
+                                         Margin="0 0 10 0" Background="Red">
+                                    
+                                </Border>
+                                <TextBlock Text="..." />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+        <!-- Pagination -->
+        <Border HorizontalAlignment="Right" BorderBrush="#dee4ec" BorderThickness="1"
+                CornerRadius="5" Padding="5" Background="White" Margin="0 10 10 10">
+            <StackPanel Orientation="Horizontal">
+                <Button Style="{StaticResource PagingButton}">
+                    <Icon:PackIconMaterial Kind="ChevronLeft" />
+
+                </Button>
+                <Rectangle Width="1" Fill="#dee4ec" Margin="3 7" />
+                <Button Style="{StaticResource PagingButton}" Content="1" />
+                <Button Style="{StaticResource PagingButton}" Content="2" />
+                <TextBlock Text="..." Foreground="#6c7682" VerticalAlignment="Center" FontSize="15" Margin="10 0 10 0" />
+                <Button Style="{StaticResource PagingButton}" Content="3" />
+
+                <Rectangle Width="1" Fill="#dee4ec" Margin="3 7" />
+
+                <Button Style="{StaticResource PagingButton}">
+                    <Icon:PackIconMaterial Kind="ChevronRight" />
+
+                </Button>
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+
+
+
 </Page>

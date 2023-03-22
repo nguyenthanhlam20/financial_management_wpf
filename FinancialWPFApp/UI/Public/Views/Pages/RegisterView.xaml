@@ -5,6 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:FinancialWPFApp.UI.Public.Views.Pages"
       xmlns:vm="clr-namespace:FinancialWPFApp.UI.Public.ViewModels.Pages"
+      xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
 
       mc:Ignorable="d" 
       d:DesignHeight="750" d:DesignWidth="550"
@@ -16,13 +17,11 @@
     <Border Background="{DynamicResource TertiaryBackgroundColor}">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <Path Data="{DynamicResource sun}" 
-                      Height="{DynamicResource appIconSize}" 
-                      Width="{DynamicResource appIconSize}" 
-                      Stretch="UniformToFill" 
-                      Fill="{DynamicResource PrimaryYellowColor}" />
+                <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" Width="{DynamicResource appFontSize}" Height="{DynamicResource appFontSize}" VerticalAlignment="Center" />
                 <Label Content="{DynamicResource appName}" 
-                       Style="{DynamicResource StyledLabel}"/>
+                       Style="{DynamicResource StyledLabel}"
+                       FontWeight="ExtraBold"
+                       FontSize="{DynamicResource appFontSize}" />
 
 
             </StackPanel>
@@ -35,6 +34,7 @@
                            FontWeight="SemiBold" 
                            Margin="0 0 0 5"/>
                     <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="{Binding FullName}"
                              Tag="{DynamicResource enterFullname}"
                             
                              />
@@ -45,6 +45,7 @@
                            FontWeight="SemiBold" 
                            Margin="0 0 0 5"/>
                     <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="{Binding Email}"
                              Tag="{DynamicResource enterEmail}"
                             
                              />
@@ -56,6 +57,7 @@
                            
                            Margin="0 0 0 5"/>
                     <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="{Binding Password}"
                              Tag="{DynamicResource enterPassword}"
                              
                              />
@@ -67,6 +69,7 @@
                            
                            Margin="0 0 0 5"/>
                     <TextBox Style="{DynamicResource StyledTextBox}" 
+                             Text="{Binding ConfirmPassword}"
                              Tag="{DynamicResource confirmPassword}"
                              
                              />
@@ -76,6 +79,7 @@
                         Content="Sign up" 
                         Background="{DynamicResource PrimaryButtonColor}" 
                         FontWeight="Bold" 
+                        Foreground="{DynamicResource TertiaryWhiteColor}"
                         Command="{Binding Path=SignUpCommand}"
                         FontSize="{DynamicResource textFontSize}"/>
 
@@ -92,15 +96,13 @@
                         FontSize="{DynamicResource textFontSize}">
 
                         <StackPanel Orientation="Horizontal">
-                            <Path Data="{DynamicResource moon}" 
-                              Fill="{DynamicResource PrimaryYellowColor}" 
-                              Stretch="UniformToFill"
-                              Width="14"
-                              Height="14"/>
-                            <Label Content="Sign up with Google" 
-                               Style="{DynamicResource StyledLabel}"
-                                   Opacity="0.7"
-                               Margin="5 0 0 0"/>
+                            <Icon:PackIconMaterial Kind="Google" Foreground="{DynamicResource PrimaryButtonColor}" VerticalAlignment="Center" 
+                                                   Width="{DynamicResource textFontSize}" 
+                                                   Height="{DynamicResource textFontSize}"
+                                                   Margin="0 0 5 0"
+                                                   />
+                            <TextBlock Text="Sign In With Google"               
+                                       Foreground="{DynamicResource PrimaryButtonColor}" />
                         </StackPanel>
                     </Button>
                 </Border>
@@ -116,6 +118,7 @@
                         Margin="5 0 0 5"
                     Padding="0"
                     Height="Auto"
+                    Foreground="{DynamicResource PrimaryButtonColor}"
                       Style="{DynamicResource ProButtonStyle}" 
                        Content="Sign in"
                     Command="{Binding RedirectToSignInCommand}"

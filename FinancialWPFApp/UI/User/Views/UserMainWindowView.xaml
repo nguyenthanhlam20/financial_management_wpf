@@ -4,14 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinancialWPFApp.UI.User.Views"
-        mc:Ignorable="d" x:Name="home"
+        xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+        mc:Ignorable="d" x:Name="UserMainWindow"
         xmlns:vm="clr-namespace:FinancialWPFApp.UI.User.ViewModels"
         Title="MainWindow" Height="720" Width="1100"
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         Background="Transparent" AllowsTransparency="True"
+       
         ResizeMode="CanResize" WindowState="Normal" FontFamily="Poppins">
-    
-
+    <Window.DataContext>
+        <vm:UserMainWindowViewModel />
+    </Window.DataContext>
     <Border CornerRadius="10" Background="{DynamicResource PrimaryBackgroundColor}" >
         <Grid>
             <Grid.ColumnDefinitions>
@@ -30,9 +33,14 @@
                         <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Grid.Row="0" Orientation="Horizontal">
-                        <Image Source="/Assets/Icons/Logo.png" Stretch="Fill" Height="36" Width="36" VerticalAlignment="Center" Margin="10 0 0 0" />
-                        <Label Content="Fimo." Foreground="{DynamicResource SecondaryBlueColor}" FontWeight="Bold" FontSize="24" VerticalAlignment="Center" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Margin="5 0 0 0" />
+                    <StackPanel Orientation="Horizontal">
+                        <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" Width="{DynamicResource appFontSize}" Height="{DynamicResource appFontSize}" VerticalAlignment="Center" />
+                        <Label Content="{DynamicResource appName}" 
+                       FontWeight="ExtraBold"
+                               VerticalAlignment="Center"
+                       FontSize="{DynamicResource appFontSize}" />
+
+
                     </StackPanel>
 
                     <StackPanel Grid.Row="1" Orientation="Vertical" >
@@ -40,25 +48,36 @@
                                      Content="Dashboard" 
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource dashboard}"
+                                     Command="{Binding Path=OpenPage}"
+                                     CommandParameter="Dashboard"
                                      Margin="0 30 0 0" ></RadioButton>
                         <RadioButton x:Name="rdTransactions"
                                      Content="Transactions"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource analytics}" 
+                                     Command="{Binding Path=OpenPage}"
+                                    CommandParameter="Transaction"
+
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdReports" 
                                      Content="Reports" 
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource maximize}" 
+                                     Command="{Binding Path=OpenPage}"
+                                     CommandParameter="Report"
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdMyWallets" 
                                      Content="My Wallets" 
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
                                      Tag="{DynamicResource messages}" 
+                                     Command="{Binding Path=OpenPage}"
+                                      CommandParameter="MyWallet"
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdPrice" 
                                      Content="Pricing" 
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
+                                     Command="{Binding Path=OpenPage}"
+                                      CommandParameter="Pricing"
                                      Tag="{DynamicResource information}"></RadioButton>
 
                         <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}" />
@@ -67,9 +86,13 @@
                                      Content="Notifications" 
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource notifications}"
+                                     Command="{Binding Path=OpenPage}"
+                                      CommandParameter="Notification"
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdSettings" 
                                      Content="Settings" 
+                                     Command="{Binding Path=OpenPage}"
+                                     CommandParameter="InfoSetting"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource settings}" ></RadioButton>
 
@@ -93,7 +116,18 @@
                             <Button Content="Upgrade" Style="{DynamicResource ProButtonStyle}" Margin="0 50 0 0"/>
                         </Grid>
                     </Border>
-                    <Path Grid.Row ="3" Data="{DynamicResource information}" Fill="{DynamicResource TertiaryTextColor}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20 0 0 0" />
+
+
+                    <Path Grid.Row ="3" Data="{DynamicResource information}" 
+                          Fill="{DynamicResource TertiaryTextColor}" 
+                          HorizontalAlignment="Left" 
+                          VerticalAlignment="Center" 
+                          Margin="20 0 0 0" 
+      
+                          >
+                     
+
+                    </Path>
                     <Border Grid.Row="3" CornerRadius="18" Width="110" Height="35" Background="{DynamicResource TertiaryBackgroundColor}" HorizontalAlignment="Right" Margin="0 0 20 0" >
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center" />
@@ -159,7 +193,13 @@
 
                 <!-- Start: Frame Container -->
                 <Border Grid.Row="1" CornerRadius="0 0 5 0" Background="Transparent">
-                    <Frame x:Name="frameContent" NavigationUIVisibility="Visible" Margin="10"/>
+                    <Frame
+                    Padding="90 30 90 30" 
+                    Background="{DynamicResource TertiaryBackgroundColor}"
+                    Content="{Binding CurrentPage}" 
+                       x:Name="frameContent"
+                       NavigationUIVisibility="Hidden" 
+                        />
                 </Border>
                 <!-- End: Frame Container -->
 
