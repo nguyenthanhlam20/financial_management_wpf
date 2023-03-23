@@ -7,56 +7,62 @@
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
 
         mc:Ignorable="d"
-        Title="TransactionDetails" Height="400" Width="443">
-    <Border Padding="15">
+        Title="TransactionDetails" Height="600" Width="680">
+    <Border Padding="25">
         <StackPanel Orientation="Vertical" >
-            <TextBlock x:Name="txtTitle" Text="TRANSACTION DETAILS" TextAlignment="Center" FontWeight="Bold" Margin="0 0 0 10" />
+            <TextBlock x:Name="txtTitle" Text="TRANSACTION DETAILS" FontSize="26" Foreground="{DynamicResource PrimaryButtonColor}" TextAlignment="Center" FontWeight="Bold" Margin="0 0 0 30" />
             <StackPanel Orientation="Horizontal"  >
-                <StackPanel Orientation="Vertical" Margin="0 0 10 0">
+                <StackPanel Orientation="Vertical" Margin="0 0 20 0">
                     <StackPanel Orientation="Vertical" Margin="0 0 0 10" >
-                        <Label Style="{DynamicResource LabelInput}" Content="Wallet" />
-                        <ComboBox Height="25" />
+                        <Label FontSize="{DynamicResource textFontSize}"
+                               Margin="0 0 0 10"
+                               Style="{DynamicResource LabelInput}" Content="Wallet" />
+                        <ComboBox Height="45" x:Name="cbWallet" Width="300" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" Margin="0 0 0 10" >
-                        <Label Content="Amount" Style="{DynamicResource LabelInput}" />
-                        <TextBox Style="{DynamicResource StyledTextBox}" Height="25" Width="200" />
+                        <Label FontSize="{DynamicResource textFontSize}"
+                               Margin="0 0 0 10"
+                               Content="Amount" Style="{DynamicResource LabelInput}" />
+                        <TextBox x:Name="txtAmount" Style="{DynamicResource StyledTextBox}"
+                                 
+                                 Width="300" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" >
-                        <Label Content="Payment To/From" Style="{DynamicResource LabelInput}"/>
-                        <TextBox Style="{DynamicResource StyledTextBox}" Height="25" Width="200" />
+                        <Label FontSize="{DynamicResource textFontSize}" Content="Payment To/From" Style="{DynamicResource LabelInput}"/>
+                        <TextBox x:Name="txtFromTo" Style="{DynamicResource StyledTextBox}" Width="300" />
                     </StackPanel>
                 </StackPanel>
                 <StackPanel Orientation="Vertical">
                     <StackPanel Orientation="Vertical" Margin="0 0 0 10" >
-                        <Label Content="Date" Style="{DynamicResource LabelInput}"/>
-                        <DatePicker Height="25" FontSize="10" Width="200"  />
+                        <Label Margin="0 0 0 10" FontSize="{DynamicResource textFontSize}" Content="Date" Style="{DynamicResource LabelInput}"/>
+                        <DatePicker Height="45" x:Name="dpDate" FontSize="{DynamicResource textFontSize}" Width="300" VerticalContentAlignment="Center"   />
                     </StackPanel>
-                    <StackPanel Orientation="Vertical" Margin="0 0 0 10" >
-                        <Label Content="Transaction Type" Style="{DynamicResource LabelInput}"/>
-                        <ComboBox Height="25" />
+                    <StackPanel  Orientation="Vertical" Margin="0 0 0 10" >
+                        <Label Margin="0 0 0 10" FontSize="{DynamicResource textFontSize}" Content="Transaction Type" Style="{DynamicResource LabelInput}"/>
+                        <ComboBox Width="300" x:Name="cbTransactionType" Height="45" />
                     </StackPanel>
                     <StackPanel Orientation="Vertical" >
-                        <Label Content="Status" Style="{DynamicResource LabelInput}" />
-                        <ComboBox Height="25" />
+                        <Label Margin="0 0 0 10" FontSize="{DynamicResource textFontSize}" Content="Status" Style="{DynamicResource LabelInput}" />
+                        <ComboBox Width="300" x:Name="cbStatus" Height="45" />
                     </StackPanel>
                 </StackPanel>
-               
+
             </StackPanel>
             <StackPanel Orientation="Vertical" HorizontalAlignment="Left" Margin="0 10 0 0" >
-                <Label Content="Description" Style="{DynamicResource LabelInput}" />
-                <TextBox Height="100" Width="410"  />
+                <Label FontSize="{DynamicResource textFontSize}" Margin="0 0 0 10" Content="Description" Style="{DynamicResource LabelInput}" />
+                <TextBox Style="{DynamicResource StyledTextBox}" x:Name="txtDescription" Height="120" Width="620"  />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 25 5 0">
-                <Button Style="{DynamicResource AddButton}" Width="100" Height="25" Margin="0 0 10 0" >
+                <Button Style="{DynamicResource AddButton}" Width="145" Margin="0 0 10 0" >
                     <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="ContentSave" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
-                        <Label Content="Save" FontSize="10"  FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
+                        <Icon:PackIconMaterial Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" Kind="ContentSave" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
+                        <Label Content="Save" FontSize="{DynamicResource textFontSize}"  FontWeight="Bold" Foreground="White" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
-                <Button Style="{DynamicResource AddButton}" Background="Tomato" Width="100" Height="25" >
+                <Button Style="{DynamicResource AddButton}" Background="Tomato" Width="145" >
                     <StackPanel Orientation="Horizontal" >
-                        <Icon:PackIconMaterial Kind="CloseCircle" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
-                        <Label Content="Close" FontSize="10" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" />
+                        <Icon:PackIconMaterial Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" Kind="CloseCircle" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
+                        <Label FontSize="{DynamicResource textFontSize}" Content="Close" Foreground="Black" FontWeight="Bold" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
             </StackPanel>

@@ -40,7 +40,7 @@
     <Compile Update="UI\User\Views\Pages\Dashboard.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\User\Views\Pages\Transaction.xaml.cs">
+    <Compile Update="UI\User\Views\Pages\TransactionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\User\Views\Windows\TransactionDetails.xaml.cs">
@@ -117,7 +117,7 @@
     <Page Update="UI\User\Views\Pages\Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\User\Views\Pages\Transaction.xaml">
+    <Page Update="UI\User\Views\Pages\TransactionView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\Windows\TransactionDetails.xaml">

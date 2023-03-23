@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,41 @@ namespace FinancialWPFApp.UI.User.Views.Windows
         public TransactionDetails()
         {
             InitializeComponent();
+        }
+
+
+
+        public void LoadWallets()
+        {
+            using(var context = new FinancialManagementContext())
+            {
+                cbWallet.ItemsSource = context.Wallets.ToList();
+                cbWallet.DisplayMemberPath = "WalletName";
+                cbWallet.SelectedValuePath = "WalletId";
+                cbWallet.SelectedIndex = 0;
+            }
+        }
+
+        public void LoadTransactionTypes()
+        {
+            using (var context = new FinancialManagementContext())
+            {
+                cbTransactionType.ItemsSource = context.Wallets.ToList();
+                cbTransactionType.DisplayMemberPath = "TransactionTypeName";
+                cbTransactionType.SelectedValuePath = "TransactionTypeId";
+                cbTransactionType.SelectedIndex = 0;
+            }
+        }
+
+        public void LoadStatus()
+        {
+            using (var context = new FinancialManagementContext())
+            {
+                cbStatus.ItemsSource = context.Wallets.ToList();
+                cbStatus.DisplayMemberPath = "TransactionStatusName";
+                cbStatus.SelectedValuePath = "TransactionStatusId";
+                cbStatus.SelectedIndex = 0;
+            }
         }
     }
 }

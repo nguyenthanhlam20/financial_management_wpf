@@ -45,7 +45,7 @@ namespace FinancialWPFApp.UI.User.Commands
             {
                 
                 //MessageBox.Show("(" + page + "), " + frame.Name + ", " + Application.Current.MainWindow.Name);
-                frame.Navigate(new Transaction());
+                frame.Navigate(new TransactionView());
             }
 
             if (page == "MyWallet")

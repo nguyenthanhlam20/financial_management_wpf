@@ -26,13 +26,13 @@
                     <TextBox  x:Name="txtDescription" Tag="Enter description" Style="{DynamicResource StyledTextBox}" Text="{Binding Path=Description}" Margin="5" />
                 </StackPanel>
             </StackPanel>
-            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 7 0">
+            <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 8 0">
                 <Button x:Name="btnSave" Style="{DynamicResource AddButton}"
                         Command="{Binding Path=AddNewWalletCommand}"
                         CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
-                        Width="110" Margin="0 0 10 0" >
+                        Width="160" Margin="0 0 20 0" >
                     <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="ContentSave" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
+                        <Icon:PackIconMaterial Kind="ContentSave" Style="{DynamicResource GridButtonIcon}" Margin="0 0 3 0" />
                         <Label Content="Save" FontSize="{DynamicResource textFontSize}" 
                                Foreground="White" 
                                VerticalAlignment="Center"
@@ -46,9 +46,9 @@
                         CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Window}}}"
                       FontWeight="Bold"
 
-                        Background="Tomato" Width="110" >
+                        Background="Tomato" Width="160" >
                     <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="CloseCircle" Style="{DynamicResource PagingButtonIcon}" Margin="0 0 0 0" />
+                        <Icon:PackIconMaterial Kind="Close" Style="{DynamicResource GridButtonIcon}" Margin="0 0 3 0" />
                         <Label Content="Close" FontSize="{DynamicResource textFontSize}" Foreground="Black"  VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>

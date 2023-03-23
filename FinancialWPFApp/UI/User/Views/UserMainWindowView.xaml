@@ -34,8 +34,11 @@
                         <RowDefinition Height="80" />
                     </Grid.RowDefinitions>
 
-                    <StackPanel Orientation="Horizontal">
-                        <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" Width="{DynamicResource appFontSize}" Height="{DynamicResource appFontSize}" VerticalAlignment="Center" />
+                    <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                        <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" 
+                                               Width="{DynamicResource appFontSize}" 
+                                               Height="{DynamicResource appFontSize}" 
+                                               VerticalAlignment="Center" />
                         <Label Content="{DynamicResource appName}" 
                        FontWeight="ExtraBold"
                                VerticalAlignment="Center"
@@ -126,7 +129,7 @@
                           Margin="20 0 0 0" 
       
                           >
-                     
+
 
                     </Path>
                     <Border Grid.Row="3" CornerRadius="18" Width="110" Height="35" Background="{DynamicResource TertiaryBackgroundColor}" HorizontalAlignment="Right" Margin="0 0 20 0" >
@@ -193,10 +196,13 @@
                 <!-- End: Button Close | Restore | Minimize -->
 
                 <!-- Start: Frame Container -->
-                <Border Grid.Row="1" CornerRadius="0 0 5 0" Background="Transparent">
+                <Border Grid.Row="1" BorderBrush="{DynamicResource SecondaryBackgroundColor}" Margin="15" BorderThickness="5"  CornerRadius="10" 
+                        Background="Transparent">
                     <Frame
-                    Padding="30" 
-                    Background="{DynamicResource TertiaryBackgroundColor}"
+                   BorderBrush="{DynamicResource SecondaryBackgroundColor}"
+                        BorderThickness="0"
+                      Padding="30"
+                    Background="{DynamicResource SecondaryBackgroundColor}"
                     Content="{Binding CurrentPage}" 
                        x:Name="frameContent"
                        NavigationUIVisibility="Hidden" 

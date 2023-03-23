@@ -70,8 +70,6 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Assets\Values\Strings.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\LabelStyle.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\Styles\TextBoxStyle.baml
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Transaction.g.cs
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Transaction.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Dashboard.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\UserMainWindowView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\Dashboard.baml
@@ -94,3 +92,5 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Windows\WalletDetails.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Windows\TransactionDetails.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Windows\WalletDetails.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\TransactionView.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Pages\TransactionView.baml
