@@ -1,4 +1,4 @@
-﻿using FinancialLibrary.Models;
+﻿using FinancialWPFApp.Models;
 using FinancialWPFApp.Constants;
 using FinancialWPFApp.Helpers;
 using FinancialWPFApp.UI.Admin.Views;

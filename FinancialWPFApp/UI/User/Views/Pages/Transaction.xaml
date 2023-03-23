@@ -6,71 +6,75 @@
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
       xmlns:local="clr-namespace:FinancialWPFApp.UI.User.Views.Pages"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1200"
       Title="Transaction">
 
     <StackPanel Background="{DynamicResource TertiaryBackgroundColor}">
-        <TextBox Style="{DynamicResource IconTextBox}" Tag="Search transaction" ></TextBox>
-        <Button Style="{StaticResource IconButtonsStyle}" Content="1" ></Button>
+        <DockPanel  >
+            <TextBox DockPanel.Dock="Left" Width="250" Style="{DynamicResource IconTextBox}" HorizontalAlignment="Left" Tag="Search transaction" ></TextBox>
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                
+                <Button Style="{StaticResource AddButton}" Width="200" Margin="5">
+                    <StackPanel Orientation="Horizontal">
 
-
-
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
-            <Button Style="{StaticResource AddButton}" Width="120" Margin="5">
-                <StackPanel Orientation="Horizontal">
-
-                    <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
+                        <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
                                    Margin="0 0 10 0" />
-                    <TextBlock Text="Income" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-            <Button Style="{StaticResource AddButton}" Width="120" Margin="5">
-                <StackPanel Orientation="Horizontal">
-
-                    <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
-                                   Margin="0 0 10 0" />
-                    <TextBlock Text="Expense" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
-                </StackPanel>
-            </Button>
-        </StackPanel>
+                        <TextBlock Text="Add New Transaction" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+        </DockPanel>
 
 
         <Separator Height="1" Background="#dae2ea" Margin="0 -1 0 10" />
 
         <!-- Datagrid -->
-        <DataGrid x:Name="dgTransaction"
+        <DataGrid ItemsSource="{Binding Path=Transactions}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgTransaction"
                  Style="{DynamicResource DataGridStyle1}" 
                   CellStyle="{DynamicResource DataGridCellStyle1}" 
-                  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" 
                   RowStyle="{DynamicResource DataGridRowStyle1}"  >
 
 
             <DataGrid.Columns>
-                <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
-                    <DataGridCheckBoxColumn.HeaderTemplate>
-                        <DataTemplate>
-                            <CheckBox />
-                        </DataTemplate>
-                    </DataGridCheckBoxColumn.HeaderTemplate>
-                </DataGridCheckBoxColumn>
+               
 
                 <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto" />
 
                 <DataGridTemplateColumn Header="Payment To/From" IsReadOnly="True"  Width="*" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel Orientation="Horizontal"
-                                       
-                                       >
+                            <StackPanel Orientation="Horizontal">
                                 <Border  Width="25" Height="25" CornerRadius="50"
                                          Margin="0 0 10 0" Background="Red">
-                                    
+                                    <TextBlock Text="" VerticalAlignment="Center"  HorizontalAlignment="Center"/>
                                 </Border>
-                                <TextBlock Text="..." />
+                                <TextBlock Text="{Binding Path=FromTo}" VerticalAlignment="Center" />
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+
+                <DataGridTextColumn Header="Date"  IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=TransactionDate, StringFormat={}{0:dd/MM/yyyy}}" />
+                <DataGridTextColumn Header="Type" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=TransactionType.TransactionTypeName}" />
+                <DataGridTextColumn Header="Description" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
+                <DataGridTextColumn Header="Wallet" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Wallet.WalletName}" />
+                <DataGridTextColumn Header="Amount" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Amount}" />
+                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=TransactionStatus.TransactionStatusName}" />
+                <DataGridTemplateColumn Header="Operations" IsReadOnly="True"  Width="*" >
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button Style="{StaticResource GridButton}">
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}" />
+                                </Button>
+                                <Button Style="{StaticResource GridButton}">
+                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}" />
+                                </Button>
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
 
             </DataGrid.Columns>
 

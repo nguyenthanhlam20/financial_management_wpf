@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml
-22-1245803663
+25164638304
 
-36-1100628718
-22392868618
-Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\ControlStyles.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\Pages\Dashboard.xaml;UI\User\Views\Pages\InfoSetting.xaml;UI\User\Views\Pages\MyWallet.xaml;UI\User\Views\Pages\Report.xaml;UI\User\Views\Pages\Transaction.xaml;UI\User\Views\UserMainWindowView.xaml;
+49-297538137
+216-1279630097
+Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\ControlStyles.xaml;Styles\DataGridStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\Pages\Dashboard.xaml;UI\User\Views\Pages\InfoSetting.xaml;UI\User\Views\Pages\MyWallet.xaml;UI\User\Views\Pages\Report.xaml;UI\User\Views\Pages\Transaction.xaml;UI\User\Views\UserMainWindowView.xaml;UI\User\Views\Windows\TransactionDetails.xaml;UI\User\Views\Windows\WalletDetails.xaml;
 
-True
+False
 

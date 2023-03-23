@@ -1,4 +1,4 @@
-﻿using FinancialLibrary.Models;
+﻿using FinancialWPFApp.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +34,11 @@ namespace FinancialWPFApp.Helpers
                 return true;    
             }
         }
-
+        public static  bool IsNumber(string text)
+        {
+            int number;
+            return int.TryParse(text, out number);
+        }
 
     }
 }

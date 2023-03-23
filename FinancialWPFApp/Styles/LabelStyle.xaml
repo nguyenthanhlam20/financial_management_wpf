@@ -6,4 +6,14 @@
         <Setter Property="FontSize" Value="{DynamicResource textFontSize}"></Setter>
         <Setter Property="Padding" Value="0 0 0 5"></Setter>
     </Style>
+
+    <Style x:Key="LabelInput" TargetType="{x:Type Label}">
+        <Setter Property="Background" Value="{DynamicResource TertiaryBackgroundColor}"></Setter>
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBlackColor}"></Setter>
+        <Setter Property="FontSize" Value="9"></Setter>
+        <Setter Property="Padding" Value="2 0 0 0"></Setter>
+        <Setter Property="Height" Value="15"></Setter>
+        <Setter Property="VerticalContentAlignment" Value="Top"></Setter>
+    </Style>
 </ResourceDictionary>
+

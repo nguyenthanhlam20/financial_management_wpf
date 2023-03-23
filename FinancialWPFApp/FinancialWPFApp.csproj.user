@@ -43,6 +43,12 @@
     <Compile Update="UI\User\Views\Pages\Transaction.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\User\Views\Windows\TransactionDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\Windows\WalletDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Assets\Values\Sizes.xaml">
@@ -61,6 +67,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\ControlStyles.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Styles\DataGridStyle.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Styles\LabelStyle.xaml">
@@ -109,6 +118,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\Pages\Transaction.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Windows\TransactionDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Windows\WalletDetails.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

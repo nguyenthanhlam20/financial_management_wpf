@@ -108,8 +108,43 @@
         </Style.Triggers>
 
     </Style>
-    
-    
+
+    <Style x:Key="GridButtonIcon" TargetType="Icon:PackIconMaterial">
+        <Setter Property ="Width" Value="{DynamicResource textFontSize}" />
+        <Setter Property ="Height" Value="{DynamicResource textFontSize}" />
+        <Setter Property ="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="GridButton" TargetType="Button">
+        <Setter Property ="Background" Value="#512da8" />
+        <Setter Property ="BorderBrush" Value="#4a148c" />
+        <Setter Property ="Foreground" Value="#ffffff" />
+        <Setter Property ="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property ="VerticalAlignment" Value="Center" />
+        <Setter Property ="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border x:Name="Border" CornerRadius="5" 
+                            BorderThickness="1"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            Background="{TemplateBinding Background}"
+                            Padding="10 5">
+                        <ContentPresenter HorizontalAlignment="Center" 
+                                          VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+
+            </Setter.Value>
+
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True" >
+                <Setter Property="Background" Value="{DynamicResource ButtonHover}" />
+                <Setter Property="Foreground" Value="{DynamicResource TertiaryWhiteColor}" />
+            </Trigger>
+        </Style.Triggers>
+
+    </Style>
 
 
 

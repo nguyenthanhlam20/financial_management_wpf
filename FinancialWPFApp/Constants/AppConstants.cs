@@ -24,6 +24,12 @@ namespace FinancialWPFApp.Constants
             SignUp
         }
 
+        public enum ActionType
+        {
+            View = 0,
+            Edit = 1,
+            Insert = 2,
+        }
 
     }
 }

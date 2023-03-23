@@ -1,4 +1,4 @@
-﻿using FinancialLibrary.Models;
+﻿using FinancialWPFApp.Models;
 using FinancialWPFApp.Constants;
 using FinancialWPFApp.Helpers;
 using FinancialWPFApp.UI.Admin.Views;
@@ -13,6 +13,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using FinancialWPFApp.Properties;
 
 namespace FinancialWPFApp.UI.Public.Commands.Pages
 {
@@ -56,9 +57,15 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
                     using (var context = new FinancialManagementContext())
                     {
                         Account account = context.Accounts.SingleOrDefault(u => u.Email == _viewModel.Email && u.Password == _viewModel.Password);
-
                         if (account != null)
                         {
+                            // Store the username and password in the application settings
+                            Properties.Settings.Default.Email = account.Email;
+                            Properties.Settings.Default.Password = account.Password;
+
+                            // Save the settings
+                            Properties.Settings.Default.Save();
+
                             Application.Current.MainWindow.Hide();
                             if (account.RoleId == (int)AppConstants.Roles.Admin)
                             {

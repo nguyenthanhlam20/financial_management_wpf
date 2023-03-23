@@ -44,7 +44,7 @@ namespace FinancialWPFApp.UI.User.Commands
             if (page == "Transaction")
             {
                 
-                MessageBox.Show("(" + page + "), " + frame.Name + ", " + Application.Current.MainWindow.Name);
+                //MessageBox.Show("(" + page + "), " + frame.Name + ", " + Application.Current.MainWindow.Name);
                 frame.Navigate(new Transaction());
             }
 

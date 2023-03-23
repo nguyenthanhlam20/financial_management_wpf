@@ -1,5 +1,7 @@
-﻿using System;
+﻿using FinancialWPFApp.UI.User.ViewModels.Pages;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,9 +22,23 @@ namespace FinancialWPFApp.UI.User.Views.Pages
     /// </summary>
     public partial class MyWallet : Page
     {
+
+        private WalletViewModel _viewModel;
         public MyWallet()
         {
             InitializeComponent();
+
+            _viewModel = new WalletViewModel();
+            DataContext = _viewModel;
         }
+
+
+        public void LoadWallets()
+        {
+            _viewModel.LoadWallets();
+        }
+
     }
+
+
 }
