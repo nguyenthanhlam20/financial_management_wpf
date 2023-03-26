@@ -1,9 +1,12 @@
-﻿using FinancialWPFApp.Models;
+﻿using FinancialWPFApp.Constants;
+using FinancialWPFApp.Models;
 using FinancialWPFApp.UI.User.Commands.Pages;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Windows;
 
 namespace FinancialWPFApp.UI.User.ViewModels.Pages
 {
@@ -80,22 +83,34 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
 
             }
         }
-
-        public int PageSize { get; set; }
-
-
-        public int TotalPage { get; set; }
-        public string FilterSearch { get; set; } = "";
         public ReplayCommand AddNewTransactionCommand { get; set; }
         public ReplayCommand EditTransactionCommand { get; set; }
         public ReplayCommand ViewtTransactionCommand { get; set; }
+        public ReplayCommand OpenFilterCommand { get; set; }
+        public int PageSize { get; set; }
+        public int TotalPage { get; set; }
+        public string FilterSearch { get; set; } = "";
+        public int WalletFilter { get; set; } = 100;
+        public int StatusFilter { get; set; } = (int)AppConstants.TransctionStatus.All;
+        public int TypeFilter { get; set; } = (int)AppConstants.TransactionType.All;
+        public DateTime FromFilter { get; set; }
+        public DateTime ToFilter { get; set; } = DateTime.Now;
+        public int WalletExport { get; set; } = 100;
+        public int StatusExport { get; set; } = (int)AppConstants.TransctionStatus.All;
+        public int TypeExport { get; set; } = (int)AppConstants.TransactionType.All;
+        public DateTime FromExport { get; set; }
+        public DateTime ToExport { get; set; } = DateTime.Now;
+
 
         public void LoadTransactions()
         {
+         
             using (var context = new FinancialManagementContext())
             {
-                List<Transaction> list = context.Transactions.Where(w => w.Owner == Properties.Settings.Default.Email && w.TransactionId.ToString().Contains(FilterSearch)).ToList();
-                if (list.Count() > 0)
+                Transactions = GetAllTransaction();
+                TotalTransaction = Transactions.Count();
+
+                if (TotalTransaction > 0)
                 {
 
                     int from = (CurrentPage - 1) * PageSize;
@@ -103,7 +118,7 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
                     if (CurrentPage * PageSize >= TotalTransaction)
                     {
                         int step = TotalTransaction - from;
-                        Transactions = list.GetRange(from, step);
+                        Transactions = Transactions.GetRange(from, step);
 
                         FromIndex = (CurrentPage - 1) * PageSize + 1;
                         ToIndex = TotalTransaction;
@@ -111,7 +126,7 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
                     else
                     {
 
-                        Transactions = list.GetRange(from, PageSize);
+                        Transactions = Transactions.GetRange(from, PageSize);
                         FromIndex = (CurrentPage - 1) * PageSize + 1;
                         ToIndex = CurrentPage * PageSize;
                     }
@@ -130,18 +145,60 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
 
             CurrentPage = 1;
             PageSize = 10;
+            LoadTransactions();
+        }
 
+
+        public List<Transaction> GetAllTransaction()
+        {
             using (var context = new FinancialManagementContext())
             {
-                List<Transaction> Transactions = context.Transactions.Where(w => w.Owner == Properties.Settings.Default.Email && w.TransactionId.ToString().Contains(FilterSearch)).ToList();
+                List<Transaction> list = context.Transactions.Where(w => w.Owner == Properties.Settings.Default.Email
+                && w.FromTo.Contains(FilterSearch)).Include(t => t.TransactionType)
+                .Include(r => r.TransactionStatus).Include(e => e.Wallet).ToList();
 
 
-                TotalTransaction = Transactions.Count();
+                var dd = list.Min(o => o.TransactionDate);
+                if (dd != null || dd.ToString() != "")
+                {
+                    DateTime smallestDate = DateTime.Parse(dd.ToString());
+                    if (FromFilter <= DateTime.Parse("01/01/1000"))
+                    {
+                        FromFilter = smallestDate;
+                    }
 
+
+                    if (FromExport <= DateTime.Parse("01/01/1000"))
+                    {
+                        FromExport = smallestDate;
+                    }
+
+                }
+
+                if (StatusFilter != (int)AppConstants.TransctionStatus.All)
+                {
+                    list = list.Where(t => t.TransactionStatusId == StatusFilter).ToList();
+
+                }
+
+
+                if (TypeFilter != (int)AppConstants.TransactionType.All)
+                {
+                    list = list.Where(t => t.TransactionTypeId == TypeFilter).ToList();
+                }
+
+                if (WalletFilter != (int) AppConstants.WalletLimitation)
+                {
+                    list = list.Where(t => t.WalletId == WalletFilter).ToList();
+                }
+
+                list = list.Where(t => t.TransactionDate >= FromFilter && t.TransactionDate <= ToFilter).ToList();
+
+
+                //list.OrderBy(s => s.TransactionDate).ToList();
+                return list;
 
             }
-
-            LoadTransactions();
         }
 
     }

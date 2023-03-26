@@ -11,7 +11,7 @@
         WindowStartupLocation="CenterScreen" WindowStyle="None" 
         WindowState="Normal"
         Background="Transparent" AllowsTransparency="True"
-       
+       Topmost="False"
         ResizeMode="CanResize" FontFamily="Poppins">
     <Window.DataContext>
         <vm:UserMainWindowViewModel />
@@ -38,9 +38,11 @@
                         <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" 
                                                Width="{DynamicResource appFontSize}" 
                                                Height="{DynamicResource appFontSize}" 
+                                                Foreground="{DynamicResource SecondaryTextColor}"
                                                VerticalAlignment="Center" />
                         <Label Content="{DynamicResource appName}" 
                        FontWeight="ExtraBold"
+                               Foreground="{DynamicResource SecondaryTextColor}"
                                VerticalAlignment="Center"
                        FontSize="{DynamicResource appFontSize}" />
 
@@ -50,6 +52,8 @@
                     <StackPanel Grid.Row="1" Orientation="Vertical" >
                         <RadioButton x:Name="rdDashboard" 
                                      Content="Dashboard" 
+                                     IsChecked="True"
+                                     Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource dashboard}"
                                      Command="{Binding Path=OpenPage}"
@@ -57,6 +61,7 @@
                                      Margin="0 30 0 0" ></RadioButton>
                         <RadioButton x:Name="rdTransactions"
                                      Content="Transactions"
+                                     Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource analytics}" 
                                      Command="{Binding Path=OpenPage}"
@@ -65,6 +70,7 @@
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdReports" 
                                      Content="Reports" 
+                                      Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource maximize}" 
                                      Command="{Binding Path=OpenPage}"
@@ -72,6 +78,7 @@
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdMyWallets" 
                                      Content="My Wallets" 
+                                      Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
                                      Tag="{DynamicResource messages}" 
                                      Command="{Binding Path=OpenPage}"
@@ -79,6 +86,7 @@
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdPrice" 
                                      Content="Pricing" 
+                                      Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="Pricing"
@@ -88,6 +96,7 @@
 
                         <RadioButton x:Name="rdNotifications" 
                                      Content="Notifications" 
+                                      Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource notifications}"
                                      Command="{Binding Path=OpenPage}"
@@ -95,6 +104,7 @@
                                      Margin="0 1 0 0" ></RadioButton>
                         <RadioButton x:Name="rdSettings" 
                                      Content="Settings" 
+                                      Click="rdDashboard_Click"
                                      Command="{Binding Path=OpenPage}"
                                      CommandParameter="InfoSetting"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
@@ -116,22 +126,23 @@
                         </Border.BitmapEffect>
                         <Grid Margin="20">
                             <Label Content="Discover Pro" FontWeight="SemiBold" FontSize="18" Foreground="{DynamicResource TertiaryWhiteColor}" Margin="0 -12 0 0"/>
-                            <Label Content="Get Unlimited Statistics And Data" FontWeight="Regular" FontSize="10" Foreground="{DynamicResource PrimaryWhiteColor}" Margin="0 18 0 0"/>
-                            <Button Content="Upgrade" Style="{DynamicResource ProButtonStyle}" Margin="0 50 0 0"/>
+                            <Label Content="Get Unlimited Statistics, Data" FontWeight="Regular" FontSize="10" Foreground="{DynamicResource PrimaryWhiteColor}" Margin="0 12 0 0"/>
+                            <Button Content="Upgrade" Style="{DynamicResource ProButtonStyle}" Margin="0 40 0 0"/>
                         </Grid>
                     </Border>
 
 
-                    <Path Grid.Row ="3" Data="{DynamicResource information}" 
-                          Fill="{DynamicResource TertiaryTextColor}" 
-                          HorizontalAlignment="Left" 
-                          VerticalAlignment="Center" 
-                          Margin="20 0 0 0" 
-      
-                          >
+
+                    <Button Command="{Binding LogoutCommand}"  Style="{StaticResource PowerOffButton}"
+                            HorizontalAlignment="Left"  
+                            Margin="12 0 0 0" Grid.Row="3" 
+                            Height="35"
+                            Width="45"
+                         >
+                        <Icon:PackIconMaterial Kind="Power" Width="22" Height="22" />
+                    </Button>
 
 
-                    </Path>
                     <Border Grid.Row="3" CornerRadius="18" Width="110" Height="35" Background="{DynamicResource TertiaryBackgroundColor}" HorizontalAlignment="Right" Margin="0 0 20 0" >
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" >
                             <Path Data="{DynamicResource sun}" Height="16" Width="16" Stretch="UniformToFill" Fill="{DynamicResource PrimaryYellowColor}" VerticalAlignment="Center" />
@@ -157,6 +168,14 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <!-- Start: Button Close | Restore | Minimize -->
+                <Label Margin="17 15 0 0" FontSize="26" Padding="0"
+                       FontWeight="Bold"
+                       x:Name="lbTitle"
+                      
+                       Foreground="{DynamicResource SecondaryTextColor}"
+                       Grid.Row="0" 
+                            Grid.Column="0" Content="{Binding Title}" HorizontalContentAlignment="Left" 
+                        VerticalContentAlignment="Center"/>
                 <StackPanel Grid.Row="0" 
                             Grid.Column="4" 
                             HorizontalAlignment="Right" 

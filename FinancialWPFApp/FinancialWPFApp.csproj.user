@@ -25,25 +25,31 @@
     <Compile Update="UI\Public\Views\Pages\RegisterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\User\Views\Pages\InfoSetting.xaml.cs">
+    <Compile Update="UI\User\Views\Pages\DashboardView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\Pages\InfoSettingView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\User\Views\Pages\MyWallet.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\User\Views\Pages\Report.xaml.cs">
+    <Compile Update="UI\User\Views\Pages\ReportView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\User\Views\UserMainWindowView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="UI\User\Views\Pages\Dashboard.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="UI\User\Views\Pages\TransactionView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="UI\User\Views\Windows\ChooseExportOptionView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="UI\User\Views\Windows\TransactionDetails.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="UI\User\Views\Windows\TransactionFilterView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="UI\User\Views\Windows\WalletDetails.xaml.cs">
@@ -102,25 +108,31 @@
     <Page Update="UI\Public\Views\Pages\RegisterView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\User\Views\Pages\InfoSetting.xaml">
+    <Page Update="UI\User\Views\Pages\DashboardView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Pages\InfoSettingView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\Pages\MyWallet.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\User\Views\Pages\Report.xaml">
+    <Page Update="UI\User\Views\Pages\ReportView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\UserMainWindowView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="UI\User\Views\Pages\Dashboard.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="UI\User\Views\Pages\TransactionView.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="UI\User\Views\Windows\ChooseExportOptionView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="UI\User\Views\Windows\TransactionDetails.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="UI\User\Views\Windows\TransactionFilterView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="UI\User\Views\Windows\WalletDetails.xaml">

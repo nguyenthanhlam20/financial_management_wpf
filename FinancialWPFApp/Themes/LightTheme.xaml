@@ -60,7 +60,8 @@
     
     <!-- Button Color-->
     <SolidColorBrush x:Key="PrimaryButtonColor" Color="#6741d9"/>
-    <SolidColorBrush x:Key="BorderButtonColor" Color="#f5f5f5"/>
+    <SolidColorBrush x:Key="BorderButtonColor" Color="#ccc"/>
+    <SolidColorBrush x:Key="BorderTextBoxColor" Color="#ccc"/>
 
 
 

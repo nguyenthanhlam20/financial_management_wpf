@@ -6,6 +6,7 @@
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
       xmlns:local="clr-namespace:FinancialWPFApp.UI.User.Views.Pages"
       mc:Ignorable="d" 
+      
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="Transaction">
 
@@ -13,38 +14,88 @@
         <DockPanel  HorizontalAlignment="Stretch" Margin="0 0 0 20" >
             <StackPanel Orientation="Horizontal">
 
-                <Border BorderBrush="{DynamicResource PrimaryButtonColor}" BorderThickness="2"
+                <Border BorderBrush="{DynamicResource ButtonHover}" BorderThickness="2"
                         CornerRadius="7 0 0 7" 
                         Padding="10" 
                         Height="38"
-                        Background="{DynamicResource PrimaryButtonColor}">
+                        Background="{DynamicResource ButtonHover}">
                     <Icon:PackIconMaterial BorderBrush="Transparent" BorderThickness="1"
                                       
                                        Kind="SearchWeb" Width="15" Height="15"   Foreground="{DynamicResource TertiaryWhiteColor}"
-                                       Background="{DynamicResource PrimaryButtonColor}" />
+                                       Background="Transparent" />
                 </Border>
                 <TextBox DockPanel.Dock="Left" Width="250" Height="40"
                          Style="{DynamicResource StyledTextBoxSearch}" 
-                         Background="White" 
+                         
                          HorizontalAlignment="Left" 
-                         Tag="Search wallet"
+                         Tag="Search by client"
                          x:Name="txtSearch"
                          TextChanged="txtSearch_TextChanged"
                          >
 
                 </TextBox>
 
+               
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
 
                 <Button Style="{StaticResource AddButton}" Width="170" Margin="5"
-                        Command="{Binding Path=AddNewWalletCommand}"
+                        Command="{Binding Path=AddNewTransactionCommand}"
                         >
                     <StackPanel Orientation="Horizontal">
 
                         <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
                                    Margin="0 0 10 0" />
-                        <TextBlock Text="Add New Wallet" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                        <TextBlock Text="New Transaction"
+                                   
+                                  
+                                   FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource AddButton}" Width="100" Margin="5"
+                        Background="{DynamicResource PrimaryOrangeColor}"
+                       x:Name="btnImport" Click="btnImport_Click"
+                        
+                        >
+                    <StackPanel Orientation="Horizontal">
+
+                        <Icon:PackIconMaterial Kind="Import" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
+                                   Margin="0 0 10 0" />
+                        <TextBlock Text="Import"
+                                   
+                                  
+                                   FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource AddButton}" Width="100" Margin="5"
+                        Background="{DynamicResource SecondaryTealColor}"
+                        x:Name="btnExport" Click="btnExport_Click"                        
+                        >
+                    <StackPanel Orientation="Horizontal">
+
+                        <Icon:PackIconMaterial Kind="Export" VerticalAlignment="Center" 
+                                               Width="{DynamicResource textFontSize}" 
+                                               Height="{DynamicResource textFontSize}" 
+                                   Margin="0 0 10 0" />
+                        <TextBlock Text="Export"
+                                   
+                                  
+                                   FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource AddButton}" Width="100" Margin="5"
+                        Background="{DynamicResource PrimaryGreenColor}"
+                        Command="{Binding Path=OpenFilterCommand}"
+                        
+                        >
+                    <StackPanel Orientation="Horizontal">
+
+                        <Icon:PackIconMaterial Kind="Filter" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
+                                   Margin="0 0 10 0" />
+                        <TextBlock Text="Filter"
+                                   
+                                  
+                                   FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -57,10 +108,10 @@
                HorizontalAlignment="Center"
                FontSize="{DynamicResource textFontSize}" 
                FontWeight="Bold"
-               Foreground="Tomato"
+               Foreground="{DynamicResource PrimaryTextColor}"
                VerticalAlignment="Center" Visibility="Collapsed"/>
         <!-- Datagrid -->
-        <DataGrid ItemsSource="{Binding Path=Wallets}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgTransaction"
+        <DataGrid ItemsSource="{Binding Path=Transactions}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgTransaction"
                  Style="{DynamicResource DataGridStyle1}" 
                   CellStyle="{DynamicResource DataGridCellStyle1}" 
                   RowStyle="{DynamicResource DataGridRowStyle1}"
@@ -72,27 +123,31 @@
             <DataGrid.Columns>
 
 
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto" Binding="{Binding Path=TransactionId}" />
+                <DataGridTextColumn Header="#Id" IsReadOnly="True" CanUserResize="False" Width="70" Binding="{Binding Path=DisplayId}" />
 
 
 
-                <DataGridTextColumn Header="Client" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=FromTo}" />
-                <DataGridTextColumn Header="Amount" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Amount, StringFormat={}{0:C}}" />
-                <DataGridTextColumn Header="Description" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
-                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="*" >
+                <DataGridTextColumn Header="Client" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=FromTo}" />
+                <DataGridTextColumn Header="Date" IsReadOnly="True" CanUserResize="False" Width="110" Binding="{Binding Path=TransactionDate, StringFormat={}{0:dd/MM/yyyy}}" />
+                <DataGridTextColumn Header="Type" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=TransactionType.TransactionTypeName}" />
+                <DataGridTextColumn Header="Wallet" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=Wallet.WalletName}" />
+                <DataGridTextColumn Header="Amount" IsReadOnly="True" CanUserResize="False" Width="120" Binding="{Binding Path=Amount, StringFormat={}{0:C}}" />
+                <DataGridTextColumn  ScrollViewer.HorizontalScrollBarVisibility="Visible"  Header="Note" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
+                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="120" Binding="{Binding Path=TransactionStatus.TransactionStatusName}" />
+                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="125" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
                                 <Button Style="{StaticResource GridButton}" Margin="0 0 10 0"
-                                        Command="{Binding DataContext.ViewtWalletCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                        CommandParameter="{Binding Path=WalletId}"
+                                        Command="{Binding DataContext.ViewtTransactionCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding Path=TransactionId}"
                                         Background="BlueViolet"
                                         >
                                     <Icon:PackIconMaterial Kind="Eye"  Style="{StaticResource GridButtonIcon}" />
                                 </Button>
                                 <Button Style="{StaticResource GridButton}"
-                                        Command="{Binding DataContext.EditWalletCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                        CommandParameter="{Binding Path=WalletId}"
+                                        Command="{Binding DataContext.EditTransactionCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding Path=TransactionId}"
                                         >
                                     <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}" />
                                 </Button>
@@ -111,19 +166,22 @@
         <DockPanel x:Name="bottomContent" >
             <StackPanel VerticalAlignment="Center" DockPanel.Dock="Left" Orientation="Horizontal" >
 
-                <Label Padding="0" Content="Display " FontSize="{DynamicResource textFontSize}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=FromIndex}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" - " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=ToIndex}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" transactions " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="in total of " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=TotalWallet}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}"/>
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" transactions " />
+                <Label Foreground="{DynamicResource PrimaryTextColor}" Padding="0" Content="Display " FontSize="{DynamicResource textFontSize}" />
+                <Label Foreground="{DynamicResource PrimaryTextColor}" Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=FromIndex}" 
+                       FontWeight="Black" x:Name="lbFromIndex"/>
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Foreground="{DynamicResource PrimaryTextColor}" Content=" - " />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=ToIndex}" Foreground="{DynamicResource PrimaryTextColor}"
+                       FontWeight="Black"   x:Name="lbToIndex" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" transactions " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="in total of " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=TotalTransaction}"  Foreground="{DynamicResource PrimaryTextColor}"
+                       FontWeight="Black"   x:Name="lbTotalTransaction"/>
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" transactions " Foreground="{DynamicResource PrimaryTextColor}" />
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Right"   Orientation="Horizontal">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0 0 15 0">
-                    <Label  Content="Display" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" FontWeight="Bold"></Label>
+                    <Label Foreground="{DynamicResource PrimaryTextColor}" Content="Display" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" FontWeight="Bold"></Label>
                     <Border
                             CornerRadius="7"
                             Padding="1"

@@ -6,24 +6,28 @@
         xmlns:local="clr-namespace:FinancialWPFApp.UI.User.Views.Windows"
         xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
         mc:Ignorable="d"
+                ResizeMode="NoResize"
+Topmost="True"
         WindowStartupLocation="CenterScreen"
-        Title="WalletDetails" Height="320" Width="510" WindowStyle="None">
-    <Border Padding="20 20 25 20">
+        Title="WalletDetails" Height="500" Width="510" >
+    <Border Padding="20 20 25 20" Background="{DynamicResource SecondaryBackgroundColor}">
         <StackPanel Orientation="Vertical" >
-            <TextBlock x:Name="txtTitle" Text="{Binding Path=Title}" FontSize="20"
-                       Foreground="{DynamicResource PrimaryButtonColor}"
-                       TextAlignment="Center" FontWeight="Black" Margin="0 0 0 10" />
+            <TextBlock x:Name="txtTitle" Text="{Binding Path=Title}" FontSize="26"
+                       Foreground="{DynamicResource SecondaryTextColor}"
+                       HorizontalAlignment="Center"
+                       TextAlignment="Center" FontWeight="Black" Margin="0 0 0 20" />
 
             <StackPanel Orientation="Horizontal" >
                 <StackPanel Orientation="Vertical">
-                    <Label Content="Wallet Name" Height="45" FontSize="{DynamicResource textFontSize}"  Margin="5" VerticalContentAlignment="Center" />
-                    <Label Content="Balance ($)" Height="45"   FontSize="{DynamicResource textFontSize}" Margin="5" VerticalContentAlignment="Center" />
-                    <Label Content="Description" Height="45" FontSize="{DynamicResource textFontSize}"  Margin="5" VerticalContentAlignment="Center" />
+                    <Label  Foreground="{DynamicResource SecondaryTextColor}" Content="Wallet Name" Height="45" FontSize="{DynamicResource textFontSize}"  Margin="5" VerticalContentAlignment="Center" />
+                    <Label  Foreground="{DynamicResource SecondaryTextColor}" Content="Balance ($)" Height="45"   FontSize="{DynamicResource textFontSize}" Margin="5" VerticalContentAlignment="Center" />
+                    <Label  Foreground="{DynamicResource SecondaryTextColor}" Content="Description" Height="45" FontSize="{DynamicResource textFontSize}"  Margin="5" VerticalContentAlignment="Center" />
                 </StackPanel>
                 <StackPanel Orientation="Vertical" Width="350">
                     <TextBox x:Name="txtWalletName"  Tag="Enter wallet name"  Style="{DynamicResource StyledTextBox}" Text="{Binding Path=Name}" Margin="5" />
                     <TextBox x:Name="txtBalance" TextChanged="TextBox_TextChanged" PreviewTextInput="TextBox_PreviewTextInput" Style="{DynamicResource StyledTextBox}" Text="{Binding Path=Balance, StringFormat={}{0:C}}" Margin="5" />
-                    <TextBox  x:Name="txtDescription" Tag="Enter description" Style="{DynamicResource StyledTextBox}" Text="{Binding Path=Description}" Margin="5" />
+                    <TextBox 
+                             x:Name="txtDescription" Height="150" VerticalContentAlignment="Top" Tag="Enter description" Style="{DynamicResource StyledTextBox}" Text="{Binding Path=Description}" Margin="5" />
                 </StackPanel>
             </StackPanel>
             <StackPanel  Orientation="Horizontal" HorizontalAlignment="Right" Margin="0 20 8 0">

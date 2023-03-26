@@ -12,21 +12,20 @@
         <DockPanel  HorizontalAlignment="Stretch" Margin="0 0 0 20" >
             <StackPanel Orientation="Horizontal">
 
-                <Border BorderBrush="{DynamicResource PrimaryButtonColor}" BorderThickness="2"
+                <Border BorderBrush="{DynamicResource ButtonHover}" BorderThickness="2"
                         CornerRadius="7 0 0 7" 
                         Padding="10" 
                         Height="38"
-                        Background="{DynamicResource PrimaryButtonColor}">
+                        Background="{DynamicResource ButtonHover}">
                     <Icon:PackIconMaterial BorderBrush="Transparent" BorderThickness="1"
                                       
                                        Kind="SearchWeb" Width="15" Height="15"   Foreground="{DynamicResource TertiaryWhiteColor}"
-                                       Background="{DynamicResource PrimaryButtonColor}" />
+                                       Background="Transparent" />
                 </Border>
                 <TextBox DockPanel.Dock="Left" Width="250" Height="40"
                          Style="{DynamicResource StyledTextBoxSearch}" 
-                         Background="White" 
                          HorizontalAlignment="Left" 
-                         Tag="Search wallet"
+                         Tag="Search by wallet name"
                          x:Name="txtSearch"
                          TextChanged="txtSearch_TextChanged"
                          >
@@ -36,14 +35,14 @@
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                <Button Style="{StaticResource AddButton}" Width="170" Margin="5"
+                <Button Style="{StaticResource AddButton}" Width="150" Margin="5"
                         Command="{Binding Path=AddNewWalletCommand}"
                         >
                     <StackPanel Orientation="Horizontal">
 
                         <Icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="{DynamicResource textFontSize}" Height="{DynamicResource textFontSize}" 
                                    Margin="0 0 10 0" />
-                        <TextBlock Text="Add New Wallet" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
+                        <TextBlock Text="New Wallet" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
                     </StackPanel>
                 </Button>
             </StackPanel>
@@ -71,14 +70,14 @@
             <DataGrid.Columns>
 
 
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto" Binding="{Binding Path=WalletId}" />
-                
+                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Path=WalletId}" />
 
 
-                <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=WalletName}" />
-                <DataGridTextColumn Header="Balance" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Balance, StringFormat={}{0:C}}" />
+
+                <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=WalletName}" />
+                <DataGridTextColumn Header="Balance" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=Balance, StringFormat={}{0:C}}" />
                 <DataGridTextColumn Header="Description" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
-                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="*" >
+                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="125" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
@@ -110,19 +109,23 @@
         <DockPanel x:Name="bottomContent" >
             <StackPanel VerticalAlignment="Center" DockPanel.Dock="Left" Orientation="Horizontal" >
 
-                <Label Padding="0" Content="Display " FontSize="{DynamicResource textFontSize}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=FromIndex}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" - " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=ToIndex}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="in total of " />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=TotalWallet}" FontWeight="Black" Foreground="{DynamicResource ButtonHover}"/>
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " />
+                <Label Foreground="{DynamicResource PrimaryTextColor}" Padding="0" Content="Display " FontSize="{DynamicResource textFontSize}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=FromIndex}" FontWeight="Black"
+                       
+                       Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" - " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=ToIndex}" FontWeight="Black" 
+                       Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="in total of " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=TotalWallet}"
+                       FontWeight="Black" Foreground="{DynamicResource PrimaryTextColor}"/>
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " Foreground="{DynamicResource PrimaryTextColor}" />
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Right"   Orientation="Horizontal">
                 <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Margin="0 0 15 0">
-                    <Label  Content="Display" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" FontWeight="Bold"></Label>
+                    <Label Foreground="{DynamicResource PrimaryTextColor}" Content="Display" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" FontWeight="Bold"></Label>
                     <Border
                             CornerRadius="7"
                             Padding="1"

@@ -8,7 +8,7 @@
         <Setter Property="BorderBrush" Value="{DynamicResource BorderButtonColor}" />
         <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontSize" Value="{DynamicResource textFontSize}" />
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryBlackColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}" />
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="CaretBrush" Value="Aqua" />
@@ -22,7 +22,7 @@
                     <Border Name="Border"
                 CornerRadius="7"
                 Padding="2"
-                BorderThickness="2"
+                BorderThickness="1"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}">
 
@@ -32,9 +32,12 @@
                                                 Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"
                                      x:Name="textSource" 
+
+                                     TextWrapping="Wrap"
                                      Background="{TemplateBinding Background}" 
+                                     Foreground="{TemplateBinding Foreground}"
                                      BorderThickness="0"
-                                     BorderBrush="{TemplateBinding Background}"
+                                     BorderBrush="Transparent"
                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                      Padding="{TemplateBinding Padding}"
                                      Panel.ZIndex="2"
@@ -44,18 +47,19 @@
                             <TextBox BorderThickness="0"
                                      BorderBrush="Transparent" 
                                      Text="{TemplateBinding Tag}" 
-                                     Background="{TemplateBinding Background}" 
+                                     Background="{DynamicResource TertiaryBackgroundColor}" 
+                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                      Panel.ZIndex="1">
                                 <TextBox.Style>
                                     <Style TargetType="{x:Type TextBox}">
                                         <Setter Property="Foreground" Value="Transparent"/>
                                         <Setter Property="Padding" Value="10 5" />
-                                        <Setter Property="VerticalAlignment" Value="Center" />
+                                        <Setter Property="Opacity"  Value="1" />
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" 
                                                          Value="">
                                                 <Setter Property="Foreground" 
-                                                        Value="{DynamicResource TextBoxPlaceholderColor}"/>
+                                                        Value="{DynamicResource PrimaryTextColor}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -76,7 +80,7 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBlueColor}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlueColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}" />
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -84,8 +88,8 @@
                                 <!-- Desactivé-->
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryGreenColor}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlackColor}"/>
+                            <Setter Property="BorderBrush" Value="{DynamicResource ButtonHover}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource SecondaryTextColor}"/>
                         </MultiTrigger>
 
                         <MultiTrigger>
@@ -105,12 +109,13 @@
 
 
 
+
     <Style x:Key="StyledTextBoxSearch" TargetType="{x:Type TextBox}">
         <Setter Property="AllowDrop"  Value="true" />
         <Setter Property="BorderBrush" Value="{DynamicResource BorderButtonColor}" />
-        <Setter Property="Background" Value="White" />
+        <Setter Property="Background" Value="Transparent" />
         <Setter Property="FontSize" Value="{DynamicResource textFontSize}" />
-        <Setter Property="Foreground" Value="{DynamicResource PrimaryBlackColor}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="CaretBrush" Value="Aqua" />
@@ -124,7 +129,7 @@
                     <Border Name="Border"
                 CornerRadius="0 7 7 0"
                 Padding="2"
-                BorderThickness="2"
+                BorderThickness="1"
                 Background="{TemplateBinding Background}"
                 BorderBrush="{TemplateBinding BorderBrush}">
 
@@ -134,7 +139,10 @@
                                                 Mode=TwoWay,
                                                 UpdateSourceTrigger=PropertyChanged}"
                                      x:Name="textSource" 
+
+                                     TextWrapping="Wrap"
                                      Background="{TemplateBinding Background}" 
+                                     Foreground="{TemplateBinding Foreground}" 
                                      BorderThickness="0"
                                      BorderBrush="{TemplateBinding Background}"
                                      VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
@@ -146,18 +154,19 @@
                             <TextBox BorderThickness="0"
                                      BorderBrush="Transparent" 
                                      Text="{TemplateBinding Tag}" 
-                                     Background="{TemplateBinding Background}" 
+                                     Background="{DynamicResource TertiaryBackgroundColor}" 
+                                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
                                      Panel.ZIndex="1">
                                 <TextBox.Style>
                                     <Style TargetType="{x:Type TextBox}">
-                                        <Setter Property="Foreground" Value="Black"/>
+                                        <Setter Property="Foreground" Value="Transparent"/>
                                         <Setter Property="Padding" Value="10 5" />
-                                        <Setter Property="VerticalAlignment" Value="Center" />
+
                                         <Style.Triggers>
                                             <DataTrigger Binding="{Binding Path=Text, Source={x:Reference textSource}}" 
                                                          Value="">
                                                 <Setter Property="Foreground" 
-                                                        Value="{DynamicResource TextBoxPlaceholderColor}"/>
+                                                        Value="{DynamicResource PrimaryTextColor}"/>
                                             </DataTrigger>
                                         </Style.Triggers>
                                     </Style>
@@ -178,18 +187,17 @@
                                 <Condition Property="IsMouseOver" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter Property="BorderBrush" Value="{DynamicResource PrimaryBlueColor}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlueColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
                         </MultiTrigger>
-                      
 
-                        <!--<MultiTrigger>
+                        <MultiTrigger>
                             <MultiTrigger.Conditions>
-                                --><!-- Desactivé--><!--
+                                <!-- Desactivé-->
                                 <Condition Property="IsEnabled" Value="False" />
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" Value="{DynamicResource SecondaryBlueColor}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource SecondaryBlueColor}"/>
-                        </MultiTrigger>-->
+                            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryGreenColor}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryBlackColor}"/>
+                        </MultiTrigger>
 
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
@@ -198,14 +206,14 @@
                                 <Condition Property="IsFocused" Value="True" />
                             </MultiTrigger.Conditions>
                             <Setter Property="BorderBrush" Value="{DynamicResource TertiaryBlueColor}"/>
-                            <Setter Property="Foreground" Value="{DynamicResource TertiaryBlueColor}" />
+                            <Setter Property="Foreground" Value="{DynamicResource PrimaryTextColor}" />
                         </MultiTrigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
     </Style>
-
+  
 
    
 </ResourceDictionary>

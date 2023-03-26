@@ -17,8 +17,8 @@
     <Border Background="{DynamicResource TertiaryBackgroundColor}">
         <StackPanel Orientation="Vertical">
             <StackPanel Orientation="Horizontal">
-                <Icon:PackIconMaterial Kind="CashMultiple" Margin="0 0 10 0" Width="{DynamicResource appFontSize}" Height="{DynamicResource appFontSize}" VerticalAlignment="Center" />
-                <Label Content="{DynamicResource appName}" 
+                <Icon:PackIconMaterial Kind="CashMultiple" Foreground="{DynamicResource SecondaryTextColor}" Margin="0 0 10 0" Width="{DynamicResource appFontSize}" Height="{DynamicResource appFontSize}" VerticalAlignment="Center" />
+                <Label Foreground="{DynamicResource SecondaryTextColor}" Content="{DynamicResource appName}" 
                        Style="{DynamicResource StyledLabel}"
                        FontWeight="ExtraBold"
                        FontSize="{DynamicResource appFontSize}" />
@@ -26,10 +26,10 @@
 
             </StackPanel>
             <StackPanel Margin="0 60 0 0" Orientation="Vertical">
-                <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signUpTitle}" FontSize="{DynamicResource titleFontSize}" FontWeight="Bold"   />
-                <Label Style="{DynamicResource StyledLabel}" Content="{DynamicResource signUpMessage}" FontSize="{DynamicResource textFontSize}" Opacity="0.8" />
+                <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}" Content="{DynamicResource signUpTitle}" FontSize="{DynamicResource titleFontSize}" FontWeight="Bold"   />
+                <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}" Content="{DynamicResource signUpMessage}" FontSize="{DynamicResource textFontSize}" Opacity="0.8" />
                 <StackPanel Margin="0 30 0 0 " Orientation="Vertical">
-                    <Label Style="{DynamicResource StyledLabel}"
+                    <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}"
                            Content="Full Name" 
                            FontWeight="SemiBold" 
                            Margin="0 0 0 5"/>
@@ -40,7 +40,7 @@
                              />
                 </StackPanel>
                 <StackPanel Margin="0 10 0 0 " Orientation="Vertical">
-                    <Label Style="{DynamicResource StyledLabel}"
+                    <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}"
                            Content="Email" 
                            FontWeight="SemiBold" 
                            Margin="0 0 0 5"/>
@@ -51,7 +51,7 @@
                              />
                 </StackPanel>
                 <StackPanel Margin="0 10 0 0" Orientation="Vertical">
-                    <Label Style="{DynamicResource StyledLabel}" 
+                    <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}" 
                            Content="Password" 
                            FontWeight="SemiBold"
                            
@@ -66,7 +66,7 @@
                     <Label Style="{DynamicResource StyledLabel}" 
                            Content="Confirm Password" 
                            FontWeight="SemiBold"
-                           
+                           Foreground="{DynamicResource SecondaryTextColor}"
                            Margin="0 0 0 5"/>
                     <TextBox Style="{DynamicResource StyledTextBox}" 
                              Text="{Binding ConfirmPassword}"
@@ -77,7 +77,7 @@
              
                 <Button Style="{DynamicResource ProButtonStyle}" 
                         Content="Sign up" 
-                        Background="{DynamicResource PrimaryButtonColor}" 
+                        Background="{DynamicResource SecondaryBlueColor}" 
                         FontWeight="Bold" 
                         Foreground="{DynamicResource TertiaryWhiteColor}"
                         Command="{Binding Path=SignUpCommand}"
@@ -96,13 +96,13 @@
                         FontSize="{DynamicResource textFontSize}">
 
                         <StackPanel Orientation="Horizontal">
-                            <Icon:PackIconMaterial Kind="Google" Foreground="{DynamicResource PrimaryButtonColor}" VerticalAlignment="Center" 
+                            <Icon:PackIconMaterial Kind="Google"   Foreground="{DynamicResource SecondaryBlackColor}" VerticalAlignment="Center" 
                                                    Width="{DynamicResource textFontSize}" 
                                                    Height="{DynamicResource textFontSize}"
                                                    Margin="0 0 5 0"
                                                    />
-                            <TextBlock Text="Sign In With Google"               
-                                       Foreground="{DynamicResource PrimaryButtonColor}" />
+                            <TextBlock Text="Sign Up With Google"               
+                                       Foreground="{DynamicResource SecondaryBlackColor}" />
                         </StackPanel>
                     </Button>
                 </Border>
@@ -111,7 +111,7 @@
             <StackPanel HorizontalAlignment="Center" 
                         Orientation="Horizontal"
                         Margin="0 20 0 0">
-                <Label Style="{DynamicResource StyledLabel}" 
+                <Label Foreground="{DynamicResource SecondaryTextColor}" Style="{DynamicResource StyledLabel}" 
                        Content="Already have an account?"
                        Opacity="0.7"/>
                 <Button 
@@ -121,6 +121,7 @@
                     Foreground="{DynamicResource PrimaryButtonColor}"
                       Style="{DynamicResource ProButtonStyle}" 
                        Content="Sign in"
+                    Background="Transparent"
                     Command="{Binding RedirectToSignInCommand}"
                     CommandParameter="{RelativeSource Mode=FindAncestor, AncestorType=Frame}"
                        FontWeight="Bold" />

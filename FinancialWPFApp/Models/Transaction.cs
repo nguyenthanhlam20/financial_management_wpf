@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.Constants;
+using System;
 using System.Collections.Generic;
 
 namespace FinancialWPFApp.Models
@@ -15,6 +16,60 @@ namespace FinancialWPFApp.Models
         public int? TransactionStatusId { get; set; }
         public int? WalletId { get; set; }
 
+        public string GetValue(int index)
+        {
+            if (index == (int)AppConstants.TransactionColumn.Id)
+            {
+                return DisplayId;
+
+            }
+            else if (index == (int)AppConstants.TransactionColumn.Client)
+            {
+                return FromTo;
+            }
+            else if (index == (int)AppConstants.TransactionColumn.TransactionDate)
+            {
+                return TransactionDate.ToString();
+            }
+            else if (index == (int)AppConstants.TransactionColumn.Type)
+            {
+                return TransactionType.TransactionTypeName;
+            }
+
+
+            else if (index == (int)AppConstants.TransactionColumn.Wallet)
+            {
+                return Wallet.WalletName;
+
+            }
+            else if (index == (int)AppConstants.TransactionColumn.Amount)
+            {
+                return "$" + Amount;
+            }
+            else if (index == (int)AppConstants.TransactionColumn.Note)
+            {
+                return Description;
+            }
+            else
+            {
+                return TransactionStatus.TransactionStatusName;
+            }
+        }
+
+
+        public string DisplayId
+        {
+            get
+            {
+                if(TransactionId >= 10)
+                {
+                    return "T0" + TransactionId;
+                } else
+                {
+                    return "T00" + TransactionId;
+                }
+            }
+        }
         public virtual Account? OwnerNavigation { get; set; }
         public virtual TransactionStatus? TransactionStatus { get; set; }
         public virtual TransactionType? TransactionType { get; set; }

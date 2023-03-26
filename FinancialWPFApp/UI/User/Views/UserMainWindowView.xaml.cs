@@ -25,5 +25,12 @@ namespace FinancialWPFApp.UI.User.Views
             InitializeComponent();
             UserMainWindowViewModel viewModal = new UserMainWindowViewModel();
         }
+
+        private void rdDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            lbTitle.Content = (sender as RadioButton).Content;
+        }
+
+     
     }
 }

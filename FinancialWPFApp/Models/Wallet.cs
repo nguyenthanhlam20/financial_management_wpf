@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.Constants;
+using System;
 using System.Collections.Generic;
 
 namespace FinancialWPFApp.Models
@@ -17,6 +18,21 @@ namespace FinancialWPFApp.Models
         public string? Email { get; set; }
 
         public virtual Account? EmailNavigation { get; set; }
+
+        public string DisplayWallet
+        {
+            get
+            {
+                if (WalletId != 100)
+                {
+                    return WalletName + " ($" + Balance.ToString("0.00") + ")";
+                }
+                else
+                {
+                    return WalletName;
+                }
+            }
+        }
         public virtual ICollection<Transaction> Transactions { get; set; }
     }
 }

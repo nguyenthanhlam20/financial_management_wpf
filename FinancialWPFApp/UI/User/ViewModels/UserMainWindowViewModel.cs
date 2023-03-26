@@ -25,6 +25,7 @@ namespace FinancialWPFApp.UI.User.ViewModels
 
         [MaybeNull]
         public ReplayCommand SwitchThemeCommand { get; set; }
+        public ReplayCommand LogoutCommand { get; set; }
 
         public ReplayCommand OpenPage { get; set; }
 
@@ -41,6 +42,18 @@ namespace FinancialWPFApp.UI.User.ViewModels
             }
         }
 
+        public string _title = "Dashboard";
+        public string Title
+        {
+            get { return _title; }
+            set
+            {
+                _currentPage = value;
+                OnPropertyChanged("Title");
+
+            }
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged(string propertyName)
@@ -53,7 +66,7 @@ namespace FinancialWPFApp.UI.User.ViewModels
         public UserMainWindowViewModel()
         {
             UserMainWindowCommand commands = new UserMainWindowCommand(this);
-            CurrentPage = new Dashboard();
+            CurrentPage = new DashboardView();
         }
     }
 }

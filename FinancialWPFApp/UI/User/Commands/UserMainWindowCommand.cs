@@ -9,6 +9,12 @@ using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using FinancialWPFApp.UI.User.Views.Pages;
+using FinancialWPFApp.Constants;
+using FinancialWPFApp.Models;
+using FinancialWPFApp.UI.Admin.Views;
+using FinancialWPFApp.UI.User.Views;
+using FinancialWPFApp.UI.Public.Views.Pages;
+using FinancialWPFApp.UI.Public.Views;
 
 namespace FinancialWPFApp.UI.User.Commands
 {
@@ -23,10 +29,20 @@ namespace FinancialWPFApp.UI.User.Commands
             _viewModel.MinimizeWindowCommand = new ReplayCommand(MinimizeWindow);
             _viewModel.SwitchThemeCommand = new ReplayCommand(SwitchTheme);
             _viewModel.CloseWindowCommand = new ReplayCommand(CloseWindow);
+            _viewModel.LogoutCommand = new ReplayCommand(Logout);
             _viewModel.OpenPage = new ReplayCommand(OpenPage);
         }
 
+        public void Logout(object parameter)
+        {
+            Application.Current.MainWindow.Hide();
 
+            MainWindowView window = new MainWindowView();
+
+
+            Application.Current.MainWindow = window;
+            Application.Current.MainWindow.Show();
+        }
         public void OpenPage(object parameter)
         {
             Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
@@ -34,16 +50,17 @@ namespace FinancialWPFApp.UI.User.Commands
             string page = parameter.ToString();
 
 
+            _viewModel.Title = page;
 
             if (page == "Dashboard")
             {
-                frame.Navigate(new Dashboard());
+                frame.Navigate(new DashboardView());
             }
 
 
             if (page == "Transaction")
             {
-                
+
                 //MessageBox.Show("(" + page + "), " + frame.Name + ", " + Application.Current.MainWindow.Name);
                 frame.Navigate(new TransactionView());
             }
@@ -60,12 +77,12 @@ namespace FinancialWPFApp.UI.User.Commands
 
             if (page == "Report")
             {
-                frame.Navigate(new Report());
+                frame.Navigate(new ReportView());
             }
 
             if (page == "InfoSetting")
             {
-                frame.Navigate(new InfoSetting());
+                frame.Navigate(new InfoSettingView());
             }
 
         }
