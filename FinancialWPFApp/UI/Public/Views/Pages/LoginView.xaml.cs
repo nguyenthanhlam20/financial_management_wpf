@@ -20,7 +20,7 @@ namespace FinancialWPFApp.UI.Public.Views.Pages
     /// <summary>
     /// Interaction logic for LoginView.xaml
     /// </summary>
-    public partial class LoginView : Page
+    public partial class LoginView : System.Windows.Controls.Page
     {
 
         private LoginViewModel _viewModel;

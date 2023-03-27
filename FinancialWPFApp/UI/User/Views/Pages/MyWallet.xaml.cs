@@ -21,7 +21,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
     /// <summary>
     /// Interaction logic for MyWallet.xaml
     /// </summary>
-    public partial class MyWallet : Page
+    public partial class MyWallet : System.Windows.Controls.Page
     {
 
         private WalletViewModel _viewModel;

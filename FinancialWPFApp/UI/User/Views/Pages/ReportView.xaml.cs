@@ -18,7 +18,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
     /// <summary>
     /// Interaction logic for ReportView.xaml
     /// </summary>
-    public partial class ReportView : Page
+    public partial class ReportView : System.Windows.Controls.Page
     {
         public ReportView()
         {

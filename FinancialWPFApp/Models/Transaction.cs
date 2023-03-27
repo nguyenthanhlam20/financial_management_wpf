@@ -1,6 +1,8 @@
 ﻿using FinancialWPFApp.Constants;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace FinancialWPFApp.Models
 {
@@ -9,13 +11,28 @@ namespace FinancialWPFApp.Models
         public int TransactionId { get; set; }
         public string? Owner { get; set; }
         public string FromTo { get; set; } = null!;
-        public DateTime? TransactionDate { get; set; }
-        public double? Amount { get; set; }
+        public DateTime TransactionDate { get; set; }
+        public double Amount { get; set; }
         public string Description { get; set; } = null!;
         public int? TransactionTypeId { get; set; }
         public int? TransactionStatusId { get; set; }
         public int? WalletId { get; set; }
 
+        public string GetAmount
+        {
+            get
+            {
+                decimal amount = Decimal.Parse(Amount.ToString());
+                string formattedPrice = amount.ToString("C2", CultureInfo.CreateSpecificCulture("en-US"));
+                if (TransactionTypeId == (int) AppConstants.TransactionType.Income)
+                {
+                    return "+ " + formattedPrice;
+                } else
+                {
+                    return "- " + formattedPrice;
+                }
+            }
+        }
         public string GetValue(int index)
         {
             if (index == (int)AppConstants.TransactionColumn.Id)

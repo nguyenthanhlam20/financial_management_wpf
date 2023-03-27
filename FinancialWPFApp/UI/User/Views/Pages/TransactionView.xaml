@@ -131,8 +131,8 @@
                 <DataGridTextColumn Header="Date" IsReadOnly="True" CanUserResize="False" Width="110" Binding="{Binding Path=TransactionDate, StringFormat={}{0:dd/MM/yyyy}}" />
                 <DataGridTextColumn Header="Type" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=TransactionType.TransactionTypeName}" />
                 <DataGridTextColumn Header="Wallet" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=Wallet.WalletName}" />
-                <DataGridTextColumn Header="Amount" IsReadOnly="True" CanUserResize="False" Width="120" Binding="{Binding Path=Amount, StringFormat={}{0:C}}" />
-                <DataGridTextColumn  ScrollViewer.HorizontalScrollBarVisibility="Visible"  Header="Note" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
+                <DataGridTextColumn  FontWeight="Bold" Header="Amount" IsReadOnly="True" CanUserResize="False" Width="120" Binding="{Binding Path=GetAmount}" />
+                <DataGridTextColumn ScrollViewer.HorizontalScrollBarVisibility="Visible"  Header="Note" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
                 <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="120" Binding="{Binding Path=TransactionStatus.TransactionStatusName}" />
                 <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="125" >
                     <DataGridTemplateColumn.CellTemplate>

@@ -80,28 +80,28 @@
                                      Content="My Wallets" 
                                       Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
-                                     Tag="{DynamicResource messages}" 
+                                     Tag="{DynamicResource collections}" 
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="MyWallet"
                                      Margin="0 1 0 0" ></RadioButton>
+                     
+
+                        <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}" />
                         <RadioButton x:Name="rdPrice" 
                                      Content="Pricing" 
                                       Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="Pricing"
-                                     Tag="{DynamicResource information}"></RadioButton>
-
-                        <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}" />
-
-                        <RadioButton x:Name="rdNotifications" 
+                                     Tag="{DynamicResource messages}"></RadioButton>
+                        <!--<RadioButton x:Name="rdNotifications" 
                                      Content="Notifications" 
                                       Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource notifications}"
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="Notification"
-                                     Margin="0 1 0 0" ></RadioButton>
+                                     Margin="0 1 0 0" ></RadioButton>-->
                         <RadioButton x:Name="rdSettings" 
                                      Content="Settings" 
                                       Click="rdDashboard_Click"

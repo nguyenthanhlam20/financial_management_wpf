@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\App.xaml
-27-676527535
+29665495809
 
-511186769748
-2172109980180
-Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\ControlStyles.xaml;Styles\DataGridStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\Views\MainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\Pages\DashboardView.xaml;UI\User\Views\Pages\InfoSettingView.xaml;UI\User\Views\Pages\MyWallet.xaml;UI\User\Views\Pages\ReportView.xaml;UI\User\Views\Pages\TransactionView.xaml;UI\User\Views\UserMainWindowView.xaml;UI\User\Views\Windows\ChooseExportOptionView.xaml;UI\User\Views\Windows\TransactionDetails.xaml;UI\User\Views\Windows\TransactionFilterView.xaml;UI\User\Views\Windows\WalletDetails.xaml;
+54-1963136392
+219-1828287436
+Assets\Icons\Icons.xaml;Assets\Values\Sizes.xaml;Assets\Values\Strings.xaml;Controls\MenuItem.xaml;Styles\ButtonStyle.xaml;Styles\ControlStyles.xaml;Styles\DataGridStyle.xaml;Styles\LabelStyle.xaml;Styles\RadioButtonStyle.xaml;Styles\TextBoxStyle.xaml;Themes\DarkTheme.xaml;Themes\LightTheme.xaml;UI\Admin\ViewModels\Pages\DashboardPage.xaml;UI\Admin\ViewModels\Pages\UserListPage.xaml;UI\Admin\Views\AdminMainWindowView.xaml;UI\Public\Views\MainWindowView.xaml;UI\Public\Views\Pages\ForgotPasswordView.xaml;UI\Public\Views\Pages\LoginView.xaml;UI\Public\Views\Pages\RegisterView.xaml;UI\User\Views\Pages\DashboardView.xaml;UI\User\Views\Pages\InfoSettingView.xaml;UI\User\Views\Pages\MyWallet.xaml;UI\User\Views\Pages\ReportView.xaml;UI\User\Views\Pages\TransactionView.xaml;UI\User\Views\UserMainWindowView.xaml;UI\User\Views\Windows\ChooseExportOptionView.xaml;UI\User\Views\Windows\TransactionDetails.xaml;UI\User\Views\Windows\TransactionFilterView.xaml;UI\User\Views\Windows\WalletDetails.xaml;
 
 False
 

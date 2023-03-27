@@ -19,7 +19,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
     /// <summary>
     /// Interaction logic for InfoSettingView.xaml
     /// </summary>
-    public partial class InfoSettingView : Page
+    public partial class InfoSettingView : System.Windows.Controls.Page
     {
         public InfoSettingView()
         {

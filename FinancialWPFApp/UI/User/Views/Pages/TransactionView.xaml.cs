@@ -30,7 +30,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
     /// <summary>
     /// Interaction logic for Transaction.xaml
     /// </summary>
-    public partial class TransactionView : Page
+    public partial class TransactionView : System.Windows.Controls.Page
     {
         public TransactionViewModel _viewModel { get; set; }
 

@@ -67,5 +67,7 @@
 
 
     <SolidColorBrush x:Key="ButtonHover" Color="#7950f2"/>
+    <SolidColorBrush x:Key="CardBackgroundColor" Color="#f8f8f8"/>
+    <SolidColorBrush x:Key="CardIconBackground" Color="#ebe8e8"/>
 
 </ResourceDictionary>

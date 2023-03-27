@@ -70,6 +70,7 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
                         account.Password = _viewModel.Password;
                         account.IsActive = true;
                         account.FullName = _viewModel.FullName;
+                        account.RegisteredDate = DateTime.Now;
 
 
                         context.Accounts.Add(account);

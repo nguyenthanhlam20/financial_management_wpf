@@ -56,11 +56,9 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.pdb
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.genruntimeconfig.cache
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\ref\FinancialWPFApp.dll
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\Views\MainWindowView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\MainWindowView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\Pages\LoginView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\Pages\RegisterView.g.cs
-C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\Views\MainWindowView.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\MainWindowView.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\Pages\LoginView.baml
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Public\Views\Pages\RegisterView.baml
@@ -100,3 +98,11 @@ C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\FinancialWPFApp.csproj.ResolveComReference.cache
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Windows\ChooseExportOptionView.g.cs
 C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\User\Views\Windows\ChooseExportOptionView.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\bin\Debug\net6.0-windows\LiveCharts.dll
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\bin\Debug\net6.0-windows\LiveCharts.Wpf.dll
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\Views\AdminMainWindowView.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\Views\AdminMainWindowView.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\ViewModels\Pages\DashboardPage.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\ViewModels\Pages\UserListPage.g.cs
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\ViewModels\Pages\DashboardPage.baml
+C:\Users\ADMIN\Documents\C#_Project\PRN221_Project\FinancialWPFApp\obj\Debug\net6.0-windows\UI\Admin\ViewModels\Pages\UserListPage.baml
