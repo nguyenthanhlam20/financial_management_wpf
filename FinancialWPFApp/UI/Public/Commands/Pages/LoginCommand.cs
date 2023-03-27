@@ -59,29 +59,35 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
                         Account account = context.Accounts.SingleOrDefault(u => u.Email == _viewModel.Email && u.Password == _viewModel.Password);
                         if (account != null)
                         {
-                            // Store the username and password in the application settings
-                            Properties.Settings.Default.Email = account.Email;
-                            Properties.Settings.Default.Password = account.Password;
-
-                            // Save the settings
-                            Properties.Settings.Default.Save();
-
-                            Application.Current.MainWindow.Hide();
-                            if (account.RoleId == (int)AppConstants.Roles.Admin)
+                           if(account.IsActive == true)
                             {
+                                // Store the username and password in the application settings
+                                Properties.Settings.Default.Email = account.Email;
+                                Properties.Settings.Default.Password = account.Password;
 
-                                AdminMainWindowView window = new AdminMainWindowView();
-                                Application.Current.MainWindow = window;
+                                // Save the settings
+                                Properties.Settings.Default.Save();
 
-                            }
-                            else
+                                Application.Current.MainWindow.Hide();
+                                if (account.RoleId == (int)AppConstants.Roles.Admin)
+                                {
+
+                                    AdminMainWindowView window = new AdminMainWindowView();
+                                    Application.Current.MainWindow = window;
+
+                                }
+                                else
+                                {
+                                    UserMainWindowView window = new UserMainWindowView();
+                                    Application.Current.MainWindow = window;
+
+
+                                }
+                                Application.Current.MainWindow.Show();
+                            } else
                             {
-                                UserMainWindowView window = new UserMainWindowView();
-                                Application.Current.MainWindow = window;
-
-
+                                MessageBox.Show("Your account is blocked");
                             }
-                            Application.Current.MainWindow.Show();
                         }
                         else
                         {

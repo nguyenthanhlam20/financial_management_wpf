@@ -52,7 +52,11 @@ namespace FinancialWPFApp.Models
 
                 entity.Property(e => e.Dob)
                     .HasColumnType("date")
-                    .HasColumnName("dob");
+                    .HasColumnName("dob");  
+                
+                entity.Property(e => e.RegisteredDate)
+                    .HasColumnType("date")
+                    .HasColumnName("registered_date");
 
                 entity.Property(e => e.FullName)
                     .HasMaxLength(100)

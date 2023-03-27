@@ -123,7 +123,17 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
         }
 
 
+        public List<Wallet> GetAll()
+        {
+            using (var context = new FinancialManagementContext())
+            {
+                List<Wallet> list = context.Wallets.Where(w => w.Email == Properties.Settings.Default.Email && w.WalletName.Contains(FilterSearch)).ToList();
 
+                return list;
+
+            }
+
+        }
 
         public WalletViewModel()
         {

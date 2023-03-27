@@ -49,21 +49,30 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
             using (var context = new FinancialManagementContext())
             {
-                List<Transaction> transactions = context.Transactions.Where(tr => tr.Owner == Properties.Settings.Default.Email).ToList();
-
-                transactions.Where(tr => tr.TransactionDate.Year == currentYear).ToList();
-                var min = transactions.Min(o => o.TransactionDate);
-                var max = transactions.Max(o => o.TransactionDate);
-
-                int minYear = DateTime.Parse(min.ToString()).Year;
-                int maxYear = DateTime.Parse(max.ToString()).Year;
-
                 List<int> years = new();
-                for (int i = maxYear; i >= minYear; i--)
+                List<Transaction> transactions = context.Transactions.Where(tr => tr.Owner == Properties.Settings.Default.Email).ToList();
+               if(transactions.Count > 0)
                 {
-                    years.Add(i);
-                }
+                    var min = transactions.Min(o => o.TransactionDate);
+                    var max = transactions.Max(o => o.TransactionDate);
 
+                    transactions.Where(tr => tr.TransactionDate.Year == currentYear).ToList();
+
+                    int minYear = DateTime.Parse(min.ToString()).Year;
+                    int maxYear = DateTime.Parse(max.ToString()).Year;
+
+                   
+                    for (int i = maxYear; i >= minYear; i--)
+                    {
+                        years.Add(i);
+                    }
+
+                   
+                } else
+                {
+                    years.Add(DateTime.Now.Year);
+
+                }
                 cbYears.ItemsSource = years;
                 cbYears.SelectedIndex = 0;
             }

@@ -127,8 +127,7 @@ namespace FinancialWPFApp.UI.User.Views.Windows {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/user/views/windows/transactiondetails.xaml" +
-                    "", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/user/views/windows/transactiondetails.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\UI\User\Views\Windows\TransactionDetails.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

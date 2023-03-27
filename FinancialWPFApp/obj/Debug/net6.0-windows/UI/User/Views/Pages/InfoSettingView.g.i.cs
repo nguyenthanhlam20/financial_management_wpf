@@ -127,7 +127,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/user/views/pages/infosettingview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/user/views/pages/infosettingview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\UI\User\Views\Pages\InfoSettingView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

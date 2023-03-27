@@ -48,7 +48,7 @@ namespace FinancialWPFApp.UI.Admin.ViewModels.Pages
 
             using (var context = new FinancialManagementContext())
             {
-                List<Account> accounts = context.Accounts.ToList();
+                List<Account> accounts = context.Accounts.Where(ac => ac.RoleId != 1).ToList();
                 var min = accounts.Min(o => o.RegisteredDate);
                 var max = accounts.Max(o => o.RegisteredDate);
 
@@ -73,7 +73,7 @@ namespace FinancialWPFApp.UI.Admin.ViewModels.Pages
             using (var context = new FinancialManagementContext())
             {
 
-                List<Account> accounts = context.Accounts.ToList();
+                List<Account> accounts = context.Accounts.Where(ac => ac.RoleId != 1).ToList();
 
 
                 List<int> users = new();
@@ -122,7 +122,7 @@ namespace FinancialWPFApp.UI.Admin.ViewModels.Pages
         {
             using (var context = new FinancialManagementContext())
             {
-                List<Account> accounts = context.Accounts.ToList();
+                List<Account> accounts = context.Accounts.Where(ac => ac.RoleId != 1).ToList();
 
                 List<Transaction> transactions = context.Transactions.ToList();
                 lbTotalTransaction.Content = transactions.Count().ToString();

@@ -108,10 +108,18 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             _viewModel.TypeFilter = (int)AppConstants.TransactionType.All;
             _viewModel.WalletFilter = AppConstants.WalletLimitation;
         }
-        public void LoadTransactions()
+        public void LoadTransactions(bool isInsert)
         {
             _viewModel.LoadTransactions();
-            dgTransaction.ItemsSource = _viewModel.Transactions;
+
+            if(isInsert== true)
+            {
+                dgTransaction.ItemsSource = _viewModel.GetAllTransaction();
+            } else
+            {
+                dgTransaction.ItemsSource = _viewModel.Transactions;
+
+            }
             lbFromIndex.Content = _viewModel.FromIndex;
             lbToIndex.Content = _viewModel.ToIndex;
             lbTotalTransaction.Content = _viewModel.TotalTransaction;
@@ -186,7 +194,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             //MessageBox.Show("Clic " + pageIndex);
 
             _viewModel.CurrentPage = pageIndex;
-            LoadTransactions();
+            LoadTransactions(false);
 
         }
 
@@ -229,7 +237,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             {
 
                 _viewModel.CurrentPage -= 1;
-                LoadTransactions();
+                LoadTransactions(false);
              
             }
         }
@@ -240,7 +248,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             {
 
                 _viewModel.CurrentPage += 1;
-                LoadTransactions();
+                LoadTransactions(false);
             }
         }
 
@@ -249,7 +257,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             if (txtSearch.Text != null)
             {
                 _viewModel.FilterSearch = txtSearch.Text;
-               LoadTransactions();
+               LoadTransactions(false);
             }
         }
 

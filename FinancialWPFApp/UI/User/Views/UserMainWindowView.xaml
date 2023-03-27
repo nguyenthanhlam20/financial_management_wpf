@@ -84,16 +84,16 @@
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="MyWallet"
                                      Margin="0 1 0 0" ></RadioButton>
-                     
+
 
                         <Separator Margin="20 20" Background="{DynamicResource TertiaryBackgroundColor}" />
-                        <RadioButton x:Name="rdPrice" 
+                        <!--<RadioButton x:Name="rdPrice" 
                                      Content="Pricing" 
                                       Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}"  
                                      Command="{Binding Path=OpenPage}"
                                       CommandParameter="Pricing"
-                                     Tag="{DynamicResource messages}"></RadioButton>
+                                     Tag="{DynamicResource messages}"></RadioButton>-->
                         <!--<RadioButton x:Name="rdNotifications" 
                                      Content="Notifications" 
                                       Click="rdDashboard_Click"
@@ -113,10 +113,11 @@
 
                     </StackPanel>
 
-                    <Border Grid.Row="2"
-                            Margin="20 0"
-                            CornerRadius="15"
-                            Background="{DynamicResource SecondaryBlueColor}">
+                    <Border Grid.Row="1"
+                            Margin="30,350,49,25"
+                           Height="150"
+                            CornerRadius="100"
+                            Background="{DynamicResource PrimaryBlueColor}" Grid.RowSpan="2">
                         <Border.BitmapEffect>
                             <DropShadowBitmapEffect
                                             ShadowDepth="1"
@@ -125,9 +126,11 @@
                                             Softness="0.8"/>
                         </Border.BitmapEffect>
                         <Grid Margin="20">
-                            <Label Content="Discover Pro" FontWeight="SemiBold" FontSize="18" Foreground="{DynamicResource TertiaryWhiteColor}" Margin="0 -12 0 0"/>
-                            <Label Content="Get Unlimited Statistics, Data" FontWeight="Regular" FontSize="10" Foreground="{DynamicResource PrimaryWhiteColor}" Margin="0 12 0 0"/>
-                            <Button Content="Upgrade" Style="{DynamicResource ProButtonStyle}" Margin="0 40 0 0"/>
+                            <Icon:PackIconMaterial Kind="Clock" 
+                                                   Width="100" 
+                                                   Height="100" 
+                                                   Foreground="{DynamicResource TertiaryWhiteColor}" 
+                                                   HorizontalAlignment="Center" VerticalAlignment="Center" />
                         </Grid>
                     </Border>
 

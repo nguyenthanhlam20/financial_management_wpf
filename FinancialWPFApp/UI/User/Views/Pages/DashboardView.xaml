@@ -156,7 +156,7 @@
                 </lvc:CartesianChart.AxisX>
                    
                 <lvc:CartesianChart.AxisY>
-                    <lvc:Axis Title="Amount" Width="300" Foreground="{DynamicResource SecondaryTextColor}" LabelFormatter="{Binding Formatter}"></lvc:Axis>
+                    <lvc:Axis Title="Amount"  Width="300" Foreground="{DynamicResource SecondaryTextColor}" LabelFormatter="{Binding Formatter}"></lvc:Axis>
                 </lvc:CartesianChart.AxisY>
             </lvc:CartesianChart>
         </Border>

@@ -55,7 +55,7 @@
                HorizontalAlignment="Center"
                FontSize="{DynamicResource textFontSize}" 
                FontWeight="Bold"
-               Foreground="Tomato"
+               Foreground="{DynamicResource SecondaryTextColor}"
                VerticalAlignment="Center" Visibility="Collapsed"/>
         <!-- Datagrid -->
         <DataGrid ItemsSource="{Binding Path=Wallets}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgWallet"
@@ -70,9 +70,7 @@
             <DataGrid.Columns>
 
 
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Path=WalletId}" />
-
-
+            
 
                 <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=WalletName}" />
                 <DataGridTextColumn Header="Balance" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=Balance, StringFormat={}{0:C}}" />

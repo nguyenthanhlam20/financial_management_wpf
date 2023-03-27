@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialWPFApp.UI.Admin.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,13 @@ namespace FinancialWPFApp.UI.Admin.Views
         public AdminMainWindowView()
         {
             InitializeComponent();
+
+            DataContext = new AdminMainWindowViewModel();
+        }
+
+        private void rdDashboard_Click(object sender, RoutedEventArgs e)
+        {
+            lbTitle.Content = (sender as RadioButton).Content;
         }
     }
 }

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using static FinancialWPFApp.Constants.AppConstants;
 
 namespace FinancialWPFApp.UI.User.ViewModels.Windows
@@ -149,7 +150,17 @@ namespace FinancialWPFApp.UI.User.ViewModels.Windows
             TransactionDate = DateTime.Now;
             using (var context = new FinancialManagementContext())
             {
-                Wallet = context.Wallets.Where(w => w.Email == Properties.Settings.Default.Email).ToList().ElementAt(0).WalletId;
+                List<Wallet> wallets = context.Wallets.Where(w => w.Email == Properties.Settings.Default.Email).ToList();
+
+                if (wallets.Count() > 0)
+                {
+                    Wallet = wallets.ElementAt(0).WalletId;
+                }
+                else
+                {
+                    MessageBox.Show("Please add wallet first before create any transaction");
+                            
+                }
                 TStatus = context.TransactionStatuses.ToList().ElementAt(0).TransactionStatusId;
                 TType = context.TransactionTypes.ToList().ElementAt(0).TransactionTypeId;
             }

@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:FinancialWPFApp.UI.Admin.ViewModels.Pages"
       xmlns:Icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="700" d:DesignWidth="800"
       Title="UserListPage">
 
     <StackPanel Background="{DynamicResource SecondaryBackgroundColor}" >
@@ -26,7 +26,7 @@
                 <TextBox DockPanel.Dock="Left" Width="250" Height="40"
                          Style="{DynamicResource StyledTextBoxSearch}" 
                          HorizontalAlignment="Left" 
-                         Tag="Search by wallet name"
+                         Tag="Search by full name"
                          x:Name="txtSearch"
                          TextChanged="txtSearch_TextChanged"
                          >
@@ -36,8 +36,8 @@
             </StackPanel>
             <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
 
-                <Button Style="{StaticResource AddButton}" Width="150" Margin="5"
-                        Command="{Binding Path=AddNewWalletCommand}"
+                <!--<Button Style="{StaticResource AddButton}" Width="150" Margin="5"
+                       
                         >
                     <StackPanel Orientation="Horizontal">
 
@@ -45,7 +45,7 @@
                                    Margin="0 0 10 0" />
                         <TextBlock Text="New Wallet" FontSize="{DynamicResource textFontSize}" VerticalAlignment="Center" />
                     </StackPanel>
-                </Button>
+                </Button>-->
             </StackPanel>
         </DockPanel>
 
@@ -59,7 +59,7 @@
                Foreground="Tomato"
                VerticalAlignment="Center" Visibility="Collapsed"/>
         <!-- Datagrid -->
-        <DataGrid ItemsSource="{Binding Path=Wallets}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgWallet"
+        <DataGrid  ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" x:Name="dgWallet"
                  Style="{DynamicResource DataGridStyle1}" 
                   CellStyle="{DynamicResource DataGridCellStyle1}" 
                   RowStyle="{DynamicResource DataGridRowStyle1}"
@@ -70,31 +70,24 @@
 
             <DataGrid.Columns>
 
-
-                <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="50" Binding="{Binding Path=WalletId}" />
-
-
-
-                <DataGridTextColumn Header="Name" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=WalletName}" />
-                <DataGridTextColumn Header="Balance" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=Balance, StringFormat={}{0:C}}" />
-                <DataGridTextColumn Header="Description" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Description}" />
-                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="125" >
+                <DataGridTextColumn Header="Fullname" IsReadOnly="True" CanUserResize="False" Width="160" Binding="{Binding Path=FullName}" />
+                <DataGridTextColumn Header="Email" IsReadOnly="True" CanUserResize="False" Width="*" Binding="{Binding Path=Email}" />
+                <DataGridTextColumn Header="Phone" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=Phone}" />
+                <DataGridTextColumn Header="Gender" IsReadOnly="True" CanUserResize="False" Width="100" Binding="{Binding Path=DisplayGender}" />
+                <DataGridTextColumn Header="Registered Date" IsReadOnly="True" CanUserResize="False" Width="150" Binding="{Binding Path=RegisteredDate, StringFormat={}{0:d}}" />
+                <DataGridTextColumn Header="Status" IsReadOnly="True" CanUserResize="False" Width="160" Binding="{Binding Path=DisplayStatus}" />
+                <DataGridTemplateColumn Header="Action" IsReadOnly="True"  Width="120" >
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <StackPanel Orientation="Horizontal">
-                                <Button Style="{StaticResource GridButton}" Margin="0 0 10 0"
-                                        Command="{Binding DataContext.ViewtWalletCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                        CommandParameter="{Binding Path=WalletId}"
+                                <Button Style="{StaticResource AddButton}" Height="32" Width="80" Margin="0 0 15 0"
+                                        Command="{Binding DataContext.ActionOnUser, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                        CommandParameter="{Binding Path=Email}"
                                         Background="BlueViolet"
                                         >
-                                    <Icon:PackIconMaterial Kind="Eye"  Style="{StaticResource GridButtonIcon}" />
+                                    <Label Content="{Binding DisplayStatusReverse}" FontSize="{DynamicResource textFontSize}" Foreground="{DynamicResource TertiaryWhiteColor}" />
                                 </Button>
-                                <Button Style="{StaticResource GridButton}"
-                                        Command="{Binding DataContext.EditWalletCommand, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
-                                        CommandParameter="{Binding Path=WalletId}"
-                                        >
-                                    <Icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource GridButtonIcon}" />
-                                </Button>
+                              
 
                             </StackPanel>
                         </DataTemplate>
@@ -111,17 +104,17 @@
             <StackPanel VerticalAlignment="Center" DockPanel.Dock="Left" Orientation="Horizontal" >
 
                 <Label Foreground="{DynamicResource PrimaryTextColor}" Padding="0" Content="Display " FontSize="{DynamicResource textFontSize}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=FromIndex}" FontWeight="Black"
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" x:Name="lbFromIndex"  FontWeight="Black"
                        
                        Foreground="{DynamicResource PrimaryTextColor}" />
                 <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" - " Foreground="{DynamicResource PrimaryTextColor}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=ToIndex}" FontWeight="Black" 
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" x:Name="lbToIndex" FontWeight="Black" 
                        Foreground="{DynamicResource PrimaryTextColor}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" users " Foreground="{DynamicResource PrimaryTextColor}" />
                 <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="in total of " Foreground="{DynamicResource PrimaryTextColor}" />
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content="{Binding Path=TotalWallet}"
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" x:Name="lbTotal" 
                        FontWeight="Black" Foreground="{DynamicResource PrimaryTextColor}"/>
-                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" wallets " Foreground="{DynamicResource PrimaryTextColor}" />
+                <Label Padding="0" FontSize="{DynamicResource textFontSize}" Content=" users " Foreground="{DynamicResource PrimaryTextColor}" />
 
             </StackPanel>
             <StackPanel HorizontalAlignment="Right"   Orientation="Horizontal">

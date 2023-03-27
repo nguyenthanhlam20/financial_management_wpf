@@ -66,7 +66,7 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
 
                         MyWallet mw = frame.Content as MyWallet;
 
-                        mw.LoadWallets();
+                        mw.LoadWallets(false);
 
 
                         win.Close();
@@ -108,11 +108,8 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
 
                         MyWallet mw = frame.Content as MyWallet;
 
-                        mw.LoadWallets();
-                        if (mw != null)
-                        {
-                        }
-
+                        mw.LoadWallets(true);
+              
                         win.Close();
                     }
                 }

@@ -18,6 +18,53 @@ namespace FinancialWPFApp.Models
         public DateTime RegisteredDate { get; set; }
         public string? Phone { get; set; }
         public bool IsActive { get; set; }
+
+
+        public string DisplayGender
+        {
+            get
+            {
+                if(Gender == true)
+                {
+                    return "Male";
+                } else
+                {
+                    return "Female";
+                }
+            }
+        }
+
+        public string DisplayStatus
+        {
+            get
+            {
+                if (IsActive == true)
+                {
+                    return "Active";
+                }
+                else
+                {
+                    return "Deactive";
+                }
+            }
+
+        }
+
+        public string DisplayStatusReverse
+        {
+            get
+            {
+                if (IsActive == true)
+                {
+                    return "Deactive";
+                }
+                else
+                {
+                    return "Active";
+                }
+            }
+        }
+
         public string FullName { get; set; } = null!;
         public string? Avatar { get; set; }
         public int? RoleId { get; set; }

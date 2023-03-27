@@ -171,7 +171,7 @@ namespace FinancialWPFApp.UI.User.Views.Windows
             _viewModel.WalletFilter = (int)cbWallet.SelectedValue;
 
 
-            transactionView.LoadTransactions();
+            transactionView.LoadTransactions(false);
 
             this.Close();
         }

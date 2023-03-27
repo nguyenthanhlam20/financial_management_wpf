@@ -49,6 +49,7 @@
                         <RadioButton x:Name="rdDashboard" 
                                      Content="Dashboard" 
                                      IsChecked="True"
+                                     Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource dashboard}"
                                      Command="{Binding Path=OpenPage}"
@@ -58,18 +59,20 @@
                                      Content="Users"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource users}" 
+                                                                          Click="rdDashboard_Click"
+
                                      Command="{Binding Path=OpenPage}"
-                                    CommandParameter="Transaction"
+                                    CommandParameter="Users"
 
                                      Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdPricePackage"
+                        <!--<RadioButton x:Name="rdPricePackage"
                                      Content="Price Package"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource collections}" 
                                      Command="{Binding Path=OpenPage}"
-                                    CommandParameter="Transaction"
+                                    CommandParameter="Price Package"
 
-                                     Margin="0 1 0 0" ></RadioButton>
+                                     Margin="0 1 0 0" ></RadioButton>-->
 
 
 

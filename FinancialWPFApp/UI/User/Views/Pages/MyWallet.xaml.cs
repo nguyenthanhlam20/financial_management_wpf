@@ -37,9 +37,18 @@ namespace FinancialWPFApp.UI.User.Views.Pages
         }
 
 
-        public void LoadWallets()
+        public void LoadWallets(bool isInsert)
         {
+
+
             _viewModel.LoadWallets();
+            dgWallet.ItemsSource = _viewModel.GetAll();
+
+
+            if(isInsert == true)
+            {
+                InitializePagination();
+            }
         }
 
         public void InitializePageSize()

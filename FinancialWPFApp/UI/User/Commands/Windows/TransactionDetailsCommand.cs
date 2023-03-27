@@ -41,6 +41,8 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                 return context.Transactions.SingleOrDefault(tr => tr.TransactionId == _viewModel.TransactionId);
             }
         }
+
+
         public Wallet GetCurrentWallet()
         {
             using (var context = new FinancialManagementContext())
@@ -71,6 +73,10 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                     Transaction oldTransaction = GetOldTransaction();
                     Wallet currentWallet = GetCurrentWallet();
 
+
+
+                    double oldAmount = oldTransaction.Amount;
+
                     oldStatus = int.Parse(oldTransaction.TransactionStatusId.ToString());
                     newStatus = _viewModel.TStatus;
 
@@ -86,6 +92,9 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                         TransactionStatusId = _viewModel.TStatus,
                         WalletId = _viewModel.Wallet
                     };
+
+
+                    double differMoney = oldAmount - w.Amount;
 
                     if (currentWallet.Balance < _viewModel.Amount
                         && newStatus == (int)AppConstants.TransctionStatus.Completed
@@ -114,12 +123,31 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
 
                                 if (_viewModel.TType == (int)AppConstants.TransactionType.Income)
                                 {
+                                    if (differMoney >= 0)
+                                    {
 
-                                    currentWallet.Balance -= _viewModel.Amount;
+                                        currentWallet.Balance -= oldAmount;
+                                    }
+                                    else
+                                    {
+                                        currentWallet.Balance -= _viewModel.Amount;
+
+                                    }
                                 }
                                 else
                                 {
-                                    currentWallet.Balance += _viewModel.Amount;
+
+                                    if (differMoney >= 0)
+                                    {
+
+                                        currentWallet.Balance += oldAmount;
+                                    }
+                                    else
+                                    {
+                                        currentWallet.Balance += _viewModel.Amount;
+
+                                    }
+
 
                                 }
 
@@ -148,11 +176,28 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                                 if (_viewModel.TType == (int)AppConstants.TransactionType.Income)
                                 {
 
-                                    currentWallet.Balance += _viewModel.Amount;
+                                    if (differMoney >= 0)
+                                    {
+                                        currentWallet.Balance -= differMoney;
+                                       
+                                    }
+                                    else
+                                    {
+                                        currentWallet.Balance += differMoney;
+                                    }
                                 }
                                 else
                                 {
-                                    currentWallet.Balance -= _viewModel.Amount;
+
+                                    if(differMoney >= 0)
+                                    {
+                                        currentWallet.Balance += differMoney;
+                                    }
+                                    else
+                                    {
+                                        currentWallet.Balance -= differMoney;
+                                    }
+                                   
 
                                 }
                             }
@@ -160,7 +205,7 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                             context.SaveChanges();
 
 
-                            mw.LoadTransactions();
+                            mw.LoadTransactions(false);
                             win.Close();
                         }
                     }
@@ -194,7 +239,9 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                         TransactionStatusId = _viewModel.TStatus,
                         WalletId = _viewModel.Wallet
                     };
-                    if (currentWallet.Balance < _viewModel.Amount)
+                    if (currentWallet.Balance < _viewModel.Amount
+                          && _viewModel.TStatus == (int)AppConstants.TransctionStatus.Completed
+                        && _viewModel.TType == (int)AppConstants.TransactionType.Expense)
                     {
                         MessageBox.Show($"You dont have enough money in {currentWallet.DisplayWallet}. Please choose another wallets or deposit money to this wallet.");
                     }
@@ -229,7 +276,7 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                             TransactionView mw = frame.Content as TransactionView;
 
                             mw.ResetDefaultValue();
-                            mw.LoadTransactions();
+                            mw.LoadTransactions(true);
                             win.Close();
                         }
                     }

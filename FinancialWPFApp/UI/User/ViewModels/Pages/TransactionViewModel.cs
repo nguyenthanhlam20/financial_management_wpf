@@ -104,7 +104,7 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
 
         public void LoadTransactions()
         {
-         
+
             using (var context = new FinancialManagementContext())
             {
                 Transactions = GetAllTransaction();
@@ -157,8 +157,11 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
                 && w.FromTo.Contains(FilterSearch)).Include(t => t.TransactionType)
                 .Include(r => r.TransactionStatus).Include(e => e.Wallet).ToList();
 
-
-                var dd = list.Min(o => o.TransactionDate);
+                var dd = DateTime.Now;
+                if (list.Count > 0)
+                {
+                    dd = list.Min(o => o.TransactionDate);
+                } 
                 if (dd != null || dd.ToString() != "")
                 {
                     DateTime smallestDate = DateTime.Parse(dd.ToString());
@@ -187,7 +190,7 @@ namespace FinancialWPFApp.UI.User.ViewModels.Pages
                     list = list.Where(t => t.TransactionTypeId == TypeFilter).ToList();
                 }
 
-                if (WalletFilter != (int) AppConstants.WalletLimitation)
+                if (WalletFilter != (int)AppConstants.WalletLimitation)
                 {
                     list = list.Where(t => t.WalletId == WalletFilter).ToList();
                 }
