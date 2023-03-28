@@ -97,7 +97,7 @@ namespace FinancialWPFApp.UI.Admin.ViewModels.Pages
             {
                 accounts = context.Accounts.Where(ac => ac.Email != "admin" && ac.FullName.Contains(filterSearch)).ToList();
                 totalRecords = accounts.Count();
-
+                lbTotal.Content = totalRecords.ToString();
 
                 int from = (currentPage - 1) * pageSize;
 

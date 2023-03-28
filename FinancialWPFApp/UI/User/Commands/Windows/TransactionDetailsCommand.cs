@@ -183,7 +183,7 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                                     }
                                     else
                                     {
-                                        currentWallet.Balance += differMoney;
+                                        currentWallet.Balance += Math.Abs(differMoney);
                                     }
                                 }
                                 else
@@ -195,7 +195,7 @@ namespace FinancialWPFApp.UI.User.Commands.Windows
                                     }
                                     else
                                     {
-                                        currentWallet.Balance -= differMoney;
+                                        currentWallet.Balance -= Math.Abs(differMoney);
                                     }
                                    
 

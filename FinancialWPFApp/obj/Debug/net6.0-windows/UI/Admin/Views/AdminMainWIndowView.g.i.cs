@@ -127,7 +127,7 @@ namespace FinancialWPFApp.UI.Admin.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/admin/views/adminmainwindowview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/admin/views/adminmainwindowview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\UI\Admin\Views\AdminMainWindowView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

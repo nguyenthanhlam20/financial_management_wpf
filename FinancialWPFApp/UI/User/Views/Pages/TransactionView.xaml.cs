@@ -20,10 +20,11 @@ using FinancialWPFApp.UI.User.ViewModels.Pages;
 using FinancialWPFApp.UI.User.Views.Windows;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.Office.Interop.Excel;
 using Microsoft.Win32;
 using static System.Net.Mime.MediaTypeNames;
 using Excel = Microsoft.Office.Interop.Excel;
-
+using Range = Microsoft.Office.Interop.Excel.Range;
 
 namespace FinancialWPFApp.UI.User.Views.Pages
 {
@@ -44,61 +45,72 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
         public TransactionView()
         {
+            excel = new Excel.Application();
+            workbook = excel.Workbooks.Add();
+            worksheet = (Excel.Worksheet)workbook.Worksheets.Add();
+            excelWorksheet = (Excel.Worksheet)workbook.Worksheets[1];
+            try
+            {
+                // Set the width of the first column to 20 characters
+                Excel.Range column1 = excelWorksheet.Columns[1];
+                column1.ColumnWidth = 7;
 
-            // Set the width of the first column to 20 characters
-            Excel.Range column1 = excelWorksheet.Columns[1];
-            column1.ColumnWidth = 7;
-
-            // Set the width of the second column to 30 characters
-            Excel.Range column2 = excelWorksheet.Columns[2];
-            column2.ColumnWidth = 20;
-
-
-            // Set the width of the second column to 30 characters
-            Excel.Range column3 = excelWorksheet.Columns[3];
-            column3.ColumnWidth = 12;
-
-
-            // Set the width of the second column to 30 characters
-            Excel.Range column4 = excelWorksheet.Columns[4];
-            column4.ColumnWidth = 10;
+                // Set the width of the second column to 30 characters
+                Excel.Range column2 = excelWorksheet.Columns[2];
+                column2.ColumnWidth = 20;
 
 
-            // Set the width of the second column to 30 characters
-            Excel.Range column5 = excelWorksheet.Columns[5];
-            column5.ColumnWidth = 10;
+                // Set the width of the second column to 30 characters
+                Excel.Range column3 = excelWorksheet.Columns[3];
+                column3.ColumnWidth = 12;
 
 
-            // Set the width of the second column to 30 characters
-            Excel.Range column6 = excelWorksheet.Columns[6];
-            column6.ColumnWidth = 12;
+                // Set the width of the second column to 30 characters
+                Excel.Range column4 = excelWorksheet.Columns[4];
+                column4.ColumnWidth = 10;
 
 
-            // Set the width of the second column to 30 characters
-            Excel.Range column7 = excelWorksheet.Columns[7];
-            column7.ColumnWidth = 50;
+                // Set the width of the second column to 30 characters
+                Excel.Range column5 = excelWorksheet.Columns[5];
+                column5.ColumnWidth = 10;
 
-            // Set the width of the second column to 30 characters
-            Excel.Range column8 = excelWorksheet.Columns[8];
-            column8.ColumnWidth = 12;
 
-            Excel.Range allCells = excelWorksheet.Cells;
-            //allCells.WrapText = true;
-            //allCells.EntireRow.AutoFit();
+                // Set the width of the second column to 30 characters
+                Excel.Range column6 = excelWorksheet.Columns[6];
+                column6.ColumnWidth = 12;
 
-            // Set the horizontal alignment of all cells to center
-            allCells.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
 
-            // Set the vertical alignment of all cells to center
-            allCells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+                // Set the width of the second column to 30 characters
+                Excel.Range column7 = excelWorksheet.Columns[7];
+                column7.ColumnWidth = 50;
 
-            InitializeComponent();
+                // Set the width of the second column to 30 characters
+                Excel.Range column8 = excelWorksheet.Columns[8];
+                column8.ColumnWidth = 12;
 
-            _viewModel = new TransactionViewModel();
-            DataContext = _viewModel;
+                Excel.Range allCells = excelWorksheet.Cells;
+                //allCells.WrapText = true;
+                //allCells.EntireRow.AutoFit();
 
-            InitializePageSize();
-            InitializePagination();
+                // Set the horizontal alignment of all cells to center
+                allCells.HorizontalAlignment = Excel.XlHAlign.xlHAlignLeft;
+
+                // Set the vertical alignment of all cells to center
+                allCells.VerticalAlignment = Excel.XlVAlign.xlVAlignCenter;
+
+                InitializeComponent();
+
+                _viewModel = new TransactionViewModel();
+                DataContext = _viewModel;
+
+                InitializePageSize();
+                InitializePagination();
+            }
+            catch (Exception)
+            {
+
+
+            }
         }
 
         public void ResetDefaultValue()
@@ -112,10 +124,12 @@ namespace FinancialWPFApp.UI.User.Views.Pages
         {
             _viewModel.LoadTransactions();
 
-            if(isInsert== true)
+            if (isInsert == true)
             {
                 dgTransaction.ItemsSource = _viewModel.GetAllTransaction();
-            } else
+                _viewModel.CurrentPage = 1;
+            }
+            else
             {
                 dgTransaction.ItemsSource = _viewModel.Transactions;
 
@@ -164,14 +178,14 @@ namespace FinancialWPFApp.UI.User.Views.Pages
                     dgTransaction.Visibility = Visibility.Visible;
                     lbNoRecords.Visibility = Visibility.Collapsed;
                 }
-                Button btn = new Button();
+                System.Windows.Controls.Button btn = new System.Windows.Controls.Button();
 
                 //MessageBox.Show(pageSize.ToString());
                 for (int i = 1; i <= _viewModel.TotalPage; i++)
                 {
-                    btn = new Button();
+                    btn = new System.Windows.Controls.Button();
                     btn.Content = i.ToString();
-                    btn.Style = System.Windows.Application.Current.Resources["PagingButton"] as Style;
+                    btn.Style = System.Windows.Application.Current.Resources["PagingButton"] as System.Windows.Style;
 
                     if (_viewModel.CurrentPage == i)
                     {
@@ -188,7 +202,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-            Button btn = sender as Button;
+            System.Windows.Controls.Button btn = sender as System.Windows.Controls.Button;
 
             int pageIndex = int.Parse(btn.Content.ToString());
             //MessageBox.Show("Clic " + pageIndex);
@@ -237,7 +251,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
                 _viewModel.CurrentPage -= 1;
                 LoadTransactions(false);
-             
+
             }
         }
 
@@ -256,21 +270,103 @@ namespace FinancialWPFApp.UI.User.Views.Pages
             if (txtSearch.Text != null)
             {
                 _viewModel.FilterSearch = txtSearch.Text;
-               LoadTransactions(false);
+                LoadTransactions(false);
             }
         }
 
 
         private void btnImport_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog saveFileDialog = new OpenFileDialog();
+            saveFileDialog.DefaultExt = ".xlsx";
+            saveFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
 
+
+            if (saveFileDialog.ShowDialog() == true)
+            {
+                ImportDataFromExcel(@"" + saveFileDialog.FileName);
+            }
         }
+
+        private void ImportDataFromExcel(string filePath)
+        {
+            try
+            {
+                // Create a new Excel Application
+                Microsoft.Office.Interop.Excel.Application excelApp = new Microsoft.Office.Interop.Excel.Application();
+
+                // Open the Excel workbook
+                Workbook workbook = excelApp.Workbooks.Open(filePath);
+
+                // Get the first worksheet
+                Worksheet worksheet = workbook.Sheets[1];
+
+                // Get the used range of cells
+                Range range = worksheet.UsedRange;
+
+                using (var context = new FinancialManagementContext())
+                {
+                    // Loop through each row and column in the range and retrieve the cell data
+                    for (int row = 2; row <= 9; row++)
+                    {
+                        string client = range.Cells[row, 1].Value2.ToString();
+                        string date = range.Cells[row, 2].Value2.ToString();
+                        string type = range.Cells[row, 3].Value2.ToString();
+                        string wallet = range.Cells[row, 4].Value2.ToString();
+                        string amount = range.Cells[row, 5].Value2.ToString();
+                        string note = range.Cells[row, 6].Value2.ToString();
+                        string status = range.Cells[row, 7].Value2.ToString();
+
+                        int typeId = context.TransactionTypes.SingleOrDefault(t => t.TransactionTypeName == type).TransactionTypeId;
+                        int statusId = context.TransactionStatuses.SingleOrDefault(t => t.TransactionStatusName == status).TransactionStatusId;
+                        Wallet w = context.Wallets.Where(w => w.WalletName == wallet).ToList().ElementAt(0);
+
+                        int walletId = w.WalletId;
+
+                        Transaction tr = new Transaction()
+                        {
+                            Owner = Properties.Settings.Default.Email,
+                            FromTo = client,
+                            TransactionDate = DateTime.Now,
+                            TransactionTypeId = typeId,
+                            TransactionStatusId = statusId,
+                            WalletId = walletId,
+                            Description = note,
+                            Amount = Double.Parse(amount)
+                        };
+
+                        context.Transactions.Add(tr);
+                    }
+                    int number = context.SaveChanges();
+                    if (number > 0)
+                    {
+                        LoadTransactions(true);
+                        MessageBox.Show($"Import {number} transactions successful");
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Import failed please check excel content format");
+                    }
+                }
+
+                // Close the workbook and Excel Application
+                workbook.Close();
+                excelApp.Quit();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show($"Import failed please check excel content format");
+            }
+        }
+
+
 
         private void btnExport_Click(object sender, RoutedEventArgs e)
         {
 
             bool isExist = false;
-            foreach (Window window in System.Windows.Application.Current.Windows)
+            foreach (System.Windows.Window window in System.Windows.Application.Current.Windows)
             {
                 if (window.GetType() == typeof(ChooseExportOptionView))
                 {
@@ -304,7 +400,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
                 List<Transaction> list;
 
-                using(var context = new FinancialManagementContext())
+                using (var context = new FinancialManagementContext())
                 {
                     list = context.Transactions.Where(w => w.Owner == Properties.Settings.Default.Email).Include(t => t.TransactionType)
                .Include(r => r.TransactionStatus).Include(e => e.Wallet).ToList();
@@ -329,7 +425,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
                         list = list.Where(t => t.TransactionTypeId == _viewModel.TypeExport).ToList();
                     }
 
-                    if (_viewModel.WalletExport != (int) AppConstants.WalletLimitation)
+                    if (_viewModel.WalletExport != (int)AppConstants.WalletLimitation)
                     {
                         list = list.Where(t => t.WalletId == _viewModel.WalletExport).ToList();
                     }
@@ -341,7 +437,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
                 }
 
 
-               if(list.Count() > 0)
+                if (list.Count() > 0)
                 {
                     SaveFileDialog saveFileDialog = new SaveFileDialog();
                     saveFileDialog.DefaultExt = ".xlsx";
@@ -375,7 +471,8 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
                         MessageBox.Show("Export to excel file successful.");
                     }
-                } else
+                }
+                else
                 {
 
                     MessageBox.Show("There are no records that matches to your filters");

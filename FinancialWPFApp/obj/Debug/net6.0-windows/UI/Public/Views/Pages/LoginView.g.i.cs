@@ -88,7 +88,7 @@ namespace FinancialWPFApp.UI.Public.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/public/views/pages/loginview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/public/views/pages/loginview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\UI\Public\Views\Pages\LoginView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

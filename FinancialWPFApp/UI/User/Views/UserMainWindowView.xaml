@@ -68,14 +68,14 @@
                                     CommandParameter="Transaction"
 
                                      Margin="0 1 0 0" ></RadioButton>
-                        <RadioButton x:Name="rdReports" 
+                        <!--<RadioButton x:Name="rdReports" 
                                      Content="Reports" 
                                       Click="rdDashboard_Click"
                                      Style="{DynamicResource MenuRadioButtonStyle}" 
                                      Tag="{DynamicResource maximize}" 
                                      Command="{Binding Path=OpenPage}"
                                      CommandParameter="Report"
-                                     Margin="0 1 0 0" ></RadioButton>
+                                     Margin="0 1 0 0" ></RadioButton>-->
                         <RadioButton x:Name="rdMyWallets" 
                                      Content="My Wallets" 
                                       Click="rdDashboard_Click"
