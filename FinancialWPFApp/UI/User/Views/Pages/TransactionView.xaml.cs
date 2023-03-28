@@ -226,8 +226,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
                 //MessageBox.Show(pageSize.ToString());
                 _viewModel.PageSize = pageSize;
                 _viewModel.CurrentPage = 1;
-                _viewModel.LoadTransactions();
-                InitializePagination();
+                LoadTransactions(true);
             }
         }
 
@@ -335,44 +334,51 @@ namespace FinancialWPFApp.UI.User.Views.Pages
                         list = list.Where(t => t.WalletId == _viewModel.WalletExport).ToList();
                     }
 
-                    //list = list.Where(t => t.TransactionDate >= FromFilter && t.TransactionDate <= ToFilter).ToList();
+                    list = list.Where(t => t.TransactionDate >= _viewModel.FromExport && t.TransactionDate <= _viewModel.ToExport).ToList();
 
-                    MessageBox.Show(list.Count().ToString());
-                  
+                    //MessageBox.Show(list.Count().ToString());
+
                 }
 
 
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-                saveFileDialog.DefaultExt = ".xlsx";
-                saveFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
-
-
-                if (saveFileDialog.ShowDialog() == true)
+               if(list.Count() > 0)
                 {
-                    for (int i = 0; i < dgTransaction.Columns.Count - 1; i++)
+                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    saveFileDialog.DefaultExt = ".xlsx";
+                    saveFileDialog.Filter = "Excel Files|*.xls;*.xlsx;*.xlsm";
+
+
+                    if (saveFileDialog.ShowDialog() == true)
                     {
-                        if (i == (int)AppConstants.TransactionColumn.Wallet)
+                        for (int i = 0; i < dgTransaction.Columns.Count - 1; i++)
                         {
                             worksheet.Cells[1, i + 1] = dgTransaction.Columns[i].Header;
                             for (int j = 0; j < list.Count(); j++)
                             {
-                                Transaction tran = list[i];
-                               
+                                Transaction tran = list[j];
 
 
-                                worksheet.Cells[j + 2, i + 1] = tran.GetValue(j);
+
+                                for (int x = 0; x < dgTransaction.Columns.Count - 1; x++)
+                                {
+                                    worksheet.Cells[j + 2, x + 1] = tran.GetValue(x);
+                                }
                             }
                         }
+                        string filename = saveFileDialog.FileName;
+                        workbook.SaveAs(@"" + filename);
+
+
+                        workbook.Close();
+                        excel.Quit();
+
+
+                        MessageBox.Show("Export to excel file successful.");
                     }
-                    string filename = saveFileDialog.FileName;
-                    workbook.SaveAs(@"" + filename);
+                } else
+                {
 
-
-                    workbook.Close();
-                    excel.Quit();
-
-
-                    MessageBox.Show("Export to excel file successful.");
+                    MessageBox.Show("There are no records that matches to your filters");
                 }
             }
             catch (Exception ex)

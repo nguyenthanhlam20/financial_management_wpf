@@ -32,6 +32,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
         public LiveCharts.SeriesCollection SeriesCollection { get; set; }
         public string[] Labels { get; set; }
         public Func<double, string> Formatter { get; set; }
+        public Func<string, string> FormatterLabel { get; set; }
 
         public int currentYear = DateTime.Now.Year;
 
@@ -146,6 +147,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages
 
                 Labels = new[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
                 Formatter = value => value.ToString("C2");
+                FormatterLabel = value => value.ToLower();
                 chartHorizontal.Series = SeriesCollection;
             }
 

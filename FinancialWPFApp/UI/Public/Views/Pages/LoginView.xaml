@@ -72,7 +72,7 @@
                        Content="{DynamicResource forgotPassword}"
                          Background="Transparent"
                         Foreground="{DynamicResource PrimaryButtonColor}"
-                       Command="{Binding Path=RedirectToSignUpCommand}"
+                       Command="{Binding Path=RedirectToForgotPasswordCommand}"
                        FontWeight="Bold" />
                 <Button Style="{DynamicResource AddButton}" 
                          Width="430"

@@ -105,8 +105,8 @@ namespace FinancialWPFApp.UI.Public.Commands.Pages
 
         private void RedirectToForgotPassword(object parameter)
         {
-            Frame frame = (Frame)parameter;
-            frame.Navigate(new LoginView());
+            Frame frame = (Frame)Application.Current.MainWindow.FindName("frameContent");
+            frame.Navigate(new ForgotPasswordView());
         }
 
         private void RedirectToSignUp(object parameter)

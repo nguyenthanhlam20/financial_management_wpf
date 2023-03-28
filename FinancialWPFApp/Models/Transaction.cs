@@ -46,7 +46,7 @@ namespace FinancialWPFApp.Models
             }
             else if (index == (int)AppConstants.TransactionColumn.TransactionDate)
             {
-                return TransactionDate.ToString();
+                return TransactionDate.ToString("d");
             }
             else if (index == (int)AppConstants.TransactionColumn.Type)
             {
