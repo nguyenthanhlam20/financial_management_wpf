@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\FinancialWPFApp.csproj": {}
+    "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\FinancialWPFApp.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\FinancialWPFApp.csproj": {
+    "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\FinancialWPFApp.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\FinancialWPFApp.csproj",
+        "projectUniqueName": "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\FinancialWPFApp.csproj",
         "projectName": "FinancialWPFApp",
-        "projectPath": "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\FinancialWPFApp.csproj",
+        "projectPath": "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\FinancialWPFApp.csproj",
         "packagesPath": "C:\\Users\\ADMIN\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\obj\\",
+        "outputPath": "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -59,6 +59,12 @@
               "version": "[6.0.15, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.15, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
               "version": "[6.0.15, )"
             }

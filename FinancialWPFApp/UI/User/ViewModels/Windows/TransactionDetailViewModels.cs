@@ -159,7 +159,7 @@ namespace FinancialWPFApp.UI.User.ViewModels.Windows
                 else
                 {
                     MessageBox.Show("Please add wallet first before create any transaction");
-                            
+                    return;
                 }
                 TStatus = context.TransactionStatuses.ToList().ElementAt(0).TransactionStatusId;
                 TType = context.TransactionTypes.ToList().ElementAt(0).TransactionTypeId;

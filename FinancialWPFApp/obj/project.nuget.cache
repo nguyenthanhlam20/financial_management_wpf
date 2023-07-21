@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "oHuyfhx1DbNt6c7AzFgfBJMNUKigan45oxkzA+O7lfDZG9UkKWm1CzfcAbmMzdsEZZq9GRKZbdzRpU97a3vKpA==",
+  "dgSpecHash": "/xluoJaPFDrYcBkyyl8XvsRpubfrM0pFDDbebGoe5435BMQgUlvG/9Xn8lNZ9W17ztYZziMf5l14esQaYpGxKA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\Documents\\C#_Project\\PRN221_Project\\FinancialWPFApp\\FinancialWPFApp.csproj",
+  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\wpf_project\\FinancialWPFApp\\FinancialWPFApp.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\livecharts\\0.9.7\\livecharts.0.9.7.nupkg.sha512",
@@ -17,6 +17,7 @@
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.entityframeworkcore.design\\6.0.15\\microsoft.entityframeworkcore.design.6.0.15.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.entityframeworkcore.relational\\6.0.15\\microsoft.entityframeworkcore.relational.6.0.15.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.entityframeworkcore.sqlserver\\6.0.15\\microsoft.entityframeworkcore.sqlserver.6.0.15.nupkg.sha512",
+    "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\6.0.15\\microsoft.entityframeworkcore.tools.6.0.15.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\6.0.0\\microsoft.extensions.caching.abstractions.6.0.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.caching.memory\\6.0.1\\microsoft.extensions.caching.memory.6.0.1.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.0\\microsoft.extensions.configuration.abstractions.6.0.0.nupkg.sha512",

@@ -53,7 +53,7 @@ namespace FinancialWPFApp.UI.User.Views.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/user/views/pages/reportview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/user/views/pages/reportview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\UI\User\Views\Pages\ReportView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

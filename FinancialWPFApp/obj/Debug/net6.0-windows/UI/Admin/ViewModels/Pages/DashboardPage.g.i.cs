@@ -96,7 +96,7 @@ namespace FinancialWPFApp.UI.Admin.ViewModels.Pages {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;V1.0.0.0;component/ui/admin/viewmodels/pages/dashboardpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FinancialWPFApp;component/ui/admin/viewmodels/pages/dashboardpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\..\..\UI\Admin\ViewModels\Pages\DashboardPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
