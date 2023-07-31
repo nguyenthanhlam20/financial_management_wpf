@@ -1,2 +1,2 @@
 # wpf_project
-This is a project of PRN221 subject
+Final project of PRN221 subject at FPT University
